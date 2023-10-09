@@ -1,0 +1,58 @@
+{
+    "projects" : [
+        {
+            "title": "tic-tac-toe",
+            "image": "/assets/images/tic-tac-toe.png",
+            "url": "https://tic-tac-toe-five-sigma.vercel.app/",
+            "git": "https://github.com/t-a-s-h/tic-tac-toe",
+            "summary": "This ___ game lets you play against the computer. It was my experimentation with the minimax algorithm.",
+            "technologies": [
+                {
+                    "name": "JavaScript"
+                },
+                {
+                    "name": "CSS"
+                },
+                {
+                    "name": "HTML"
+                },
+                {
+                    "name": "Node.js"
+                }
+            ]
+        },
+        {
+            "title": "dominoes",
+            "image": "/assets/images/dominoes.png",
+            "url": "https://replit.com/@t-a-s-h/dominoes",
+            "git": "https://github.com/t-a-s-h/dominoes",
+            "summary": "A basic command line based game of ___ that I created in C++.",
+            "technologies": [
+                {
+                    "name": "C++"
+                }
+            ]
+        },
+        {
+            "title": "hangman",
+            "image": "/assets/images/hangman.png",
+            "url": "https://hangman-vert.vercel.app/",
+            "git": "https://github.com/t-a-s-h/hangman/",
+            "summary": "In this ___ game, you can either guess a word or have the computer guess a word.",
+            "technologies": [
+                {
+                    "name": "JavaScript"
+                },
+                {
+                    "name": "CSS"
+                },
+                {
+                    "name": "Node.js"
+                } , 
+                {
+                    "name": "React.js"
+                }
+            ]
+        }
+    ]
+}
