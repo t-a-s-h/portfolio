@@ -1,4 +1,4 @@
-# Online-Portfolio2
+# My Portfolio
 A portfolio of my work so far. Created using React.js.
 
 ## Table of Contents
