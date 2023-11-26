@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "./components/Main";
-// import Resume from "./Resume/Resume";
 import projects from "./componentFiles/projectList";
 import { images } from './files_to_write'
 import Rise from "./script"

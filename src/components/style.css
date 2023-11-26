@@ -3,7 +3,7 @@
 #root {
     font-family: 'Source Code Pro', monospace;
     --nav-color: #333;
-    
+    --show-info-speed: 0.5s;
 }
 
 :root {
@@ -25,13 +25,73 @@
     }
 }
 
-@keyframes top-nav-appear {
+@keyframes fade {
     from {
         opacity: 0;
     }
     to {
         opacity: 1;
     }
+}
+
+@keyframes slide {
+    from {
+        left: 0;
+    }
+    to {
+        transform-origin: top right;
+        scale: 1.5;
+        left: 32.5%;
+    }
+}
+
+.night .modal-box :is(h1,h2,h3,h4,h5,h6) {
+    color: #b0b5c9;
+}
+
+.sub > :not(.more){
+    mask-image: linear-gradient(to right,black 50%, transparent calc(100% - 6.5ch)), linear-gradient(to bottom, black 3.5em, transparent 3.5em);
+    mask-composite: add;
+}
+
+
+.sub  .more {
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0em 0.5em 1em 1em;
+    position: absolute;
+    right: 0;
+    bottom: -0.25em;
+}
+
+.summary.text-dark {
+    color: inherit !important;
+}
+
+.summary h3 {
+    text-align: center;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+#main_page .summary .sub p {
+    font-size: 1.2rem !important;
+    line-height: 1.75em;
+    padding-bottom: 0.25rem;
+    word-wrap: break-word;
+}
+
+#main_page .summary .sub {
+    position: relative;
+    box-sizing: content-box;
+    max-height: 5.25em;
+    margin-bottom: 1em;
+    width: fit-content;
+    position: relative;
+    overflow-y: hidden;
+    padding-bottom: 1em;
+    text-align: justify;
 }
 
 #portfolio article, #about_me > div {
@@ -74,10 +134,6 @@
     hyphens: none;
 }
 
-#main_page p  {
-    font-size: clamp(1rem, 6vw, 1.5rem) !important;
-}
-
 section {
     position: relative;
 }
@@ -90,24 +146,24 @@ section {
     background-position: top;
     width: 80%;
     height: auto !important;
-    margin-bottom: 0 auto;
-    padding-bottom: 2vmin !important;
+    margin-bottom: 0;
+    padding-bottom: 1rem !important;
     border: 3px solid lightgrey;
     padding: 3%;
     border-bottom: none;
     border-radius: 1rem 1rem 0 0;
     background-color: black;
-    box-shadow: 0 0 30px grey;
+    box-shadow: 0 0 1rem;
 }
 
 .frame:after {
   display: block;
   position: relative;
-  top: calc(0.7vmax + 2vmin) !important;
+  top: calc(0.7vw + 1rem) !important;
   z-index: 100 !important;
   content: "";
   width: 25%;
-  height: 0.7vmax;
+  height: 100%;
   background-image: linear-gradient(90deg,#585858 0%, #707070 5%, #c0c0c0 10%, #c0c0c0 90%, #707070 95%, #585858 100%);
   transform: perspective(10px) rotateX(-1deg);
   border-radius: 0 0 0.5rem 0.5rem;
@@ -125,23 +181,23 @@ section {
 .cover {
     display: block;
     position: relative;
-    height: 2vmin;
+    height: 1rem;
     width: 100%;
     background-color: lightGrey;
     border-radius: 2px;
     background-image: linear-gradient(90deg,grey 0, white 2%, lightGrey 5%, grey 10%, lightGrey 50%, grey 90%, lightGrey 95%, white 98%, grey 100%);
-    margin-bottom: 50px;
+    margin-bottom: 2rem;
 }
 
 .cover:after {
   content: "";
   display: block;
   position: relative;
-  top: 2vmin;
+  top: 1rem;
   left: 1%;
-  box-shadow: 0 10px 30px;
+  box-shadow: 0 0.5rem 1rem;
   width:98%;
-  height: 2.5vmin;
+  height: 50%;
   background-image: linear-gradient(0deg,#585858 0%, #707070 25%, #c0c0c0 100%);
   transform: perspective(10px) rotateX(-1deg);
   border-radius: 0 0 0.5rem 0.5rem;
@@ -171,14 +227,18 @@ section {
     z-index: -1;
 }
 
-.sun_moon > svg > circle.night {
-    fill: lightSteelBlue;
+.night .sun_moon > svg > circle {
+    fill: rgb(39, 73, 100);
     z-index: -1;
 }
 
 #skills *, #resume * , #portfolio > *, #about_me *, #toc * {
     z-index: 2;
     will-change: opacity;
+}
+
+#skills, #home {
+    z-index: 1;
 }
 
 #portfolio {
@@ -209,7 +269,11 @@ section {
 }
 
 #portfolio article {
+    margin-block: 25vh;
+    min-height: 50vh !important;
+    box-sizing: border-box;
     position: relative;
+    scroll-margin-top: 25vh;
 }
 
 #skills {
@@ -239,6 +303,7 @@ section > *, article > * {
 
 /* odd number of projects */
 #portfolio:has(article:last-of-type:nth-child(odd)) + #skills {
+    /* background-color: red; */
     background-image: linear-gradient(var(--sky-light-color), 80% var(--sky-color));
 }
 
@@ -258,7 +323,6 @@ body {
     background-position: center;
     background-attachment: fixed;
     padding: 0;
-    isolation: isolate;
 }
 
 main {
@@ -349,7 +413,7 @@ footer span {
     background-color: var(--nav-color);
 }
 
-#navbarNav > ul > li.nav-item:hover > a, .navbar-light .navbar-nav .sub-nav:hover .nav-link {
+#navbarNav > ul > li.nav-item:hover > a, .sub-nav:hover .nav-link {
     color: white;
 }
 
@@ -675,7 +739,7 @@ p a:hover, .call a:hover {
 }
 
 #portfolio [aria-label]:hover:after {
-    animation: top-nav-appear 0.5s ease-in-out 0.5s 1 normal forwards;
+    animation: fade 0.5s ease-in-out 0.5s 1 normal forwards;
 }
 
 .tech {
@@ -732,6 +796,102 @@ footer {
 
 .disappear {
     display: none;
+}
+
+body:has(.modal) {
+    overflow: hidden;
+    height: 100vh;
+}
+
+.modal {
+    position: fixed;
+    display: flex;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0008;
+    display: block !important;
+    animation: 1s linear fade;
+    font-size: 0.9em !important;
+}
+
+.modal-contents {
+    position: absolute;
+    overflow-y: auto;
+    inset: 2em 4em;
+    width: calc(100% - 4em);
+    padding-right: 4em;
+    padding-bottom: 4em;
+    margin-top: 2em;
+}
+
+.modal-box  header {
+    padding-top: 1em;
+    height: 3em;
+}
+
+.modal-box > header  h3 {
+    margin-inline: 1em;
+    text-align: center;
+    line-height: 0.9;
+    padding-bottom: 5em;
+}
+
+.modal-box {
+    background-color: transparent;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    height: 70vh;
+    border-radius: 5px;
+    min-width: 50%;
+    background-image: conic-gradient(at top left, #fff7, #fffd, #fff7), conic-gradient(at bottom right, #fff7, gold, #fffd);
+    border: goldenrod;
+}
+
+.night .modal-box {
+    background-image: conic-gradient(at top left, #0005, #305978,#1c365e), conic-gradient(at bottom right, #fff5, #305978,#1c365e);
+    color: #eee;
+    border: 1px solid rgb(11, 22, 37);
+
+}
+
+.night h3 {
+    color: #b0b5c9;
+}
+
+.modal-box::after  {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 20%;
+    background-image: linear-gradient(90deg, #f1efe4, #e4e0d6 75%);
+    mask: linear-gradient(transparent, black 50%);
+    box-shadow: 0 0 50px #f1efe4;
+    bottom: 0;
+}
+
+
+.night .modal-box::after  {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 20%;
+    background-image: linear-gradient(90deg, #305978,#344d72);
+    mask: linear-gradient(transparent, black 50%);
+    box-shadow: 0 0 50px #f1efe4;
+    bottom: 0;
+}
+
+.modal-box .exit {
+    display: block;
+    position: absolute;
+    right: 0.2em;
+    top: -0.2em;
+    font-size: 3em;
+    cursor: pointer;
 }
 
 /* added the below media queries so that the sun/moon image stops at the middle on smaller devices*/

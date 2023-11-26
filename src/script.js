@@ -25,6 +25,7 @@ const Rise = () => {
     const sunDiv = document.createElement("div");
     sunDiv.classList.add("sun_moon", "sun_moonrise");
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.id = "sun"
     const circle = document.createElementNS("http://www.w3.org/2000/svg","circle");
     sunDiv.classList.add("sun_moon");
     svg.setAttribute("height", "100vw");
@@ -45,7 +46,7 @@ const Rise = () => {
         .then(function(data) {
             let sunrise = moment(data.results.sunrise);
             let sunset = moment(data.results.sunset);
-            circle.classList.toggle("night",!(moment().isBetween(sunrise,sunset)));
+            document.body.classList.toggle("night",!(moment().isBetween(sunrise,sunset)));
             return data.results;
         })
         .catch(err => {

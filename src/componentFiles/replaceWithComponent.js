@@ -6,4 +6,3 @@ String.prototype.replaceJSX = function (find, replace) {
     })
     return res
 }
-

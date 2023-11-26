@@ -1,17 +1,13 @@
-import React, { useEffect } from "react"
+import React from "react"
 import Navbar from "./Navbar";
 import ProjectIntro from "./ProjectIntro"
 import Splash from "./Splash";
 import AboutMe from "./AboutMe";
 import Footer from "./Footer";
-import ResumeCall from "./ResumeCall";
 import Projects from "./Projects"
 import NavMobile from "./NavMobile";
-import Contacts from "./Contacts";
 import Skills from "./Skills";
 import './style.css'
-// import Rise from "../script"
-// import $ from "jquery"
 
 const Main = (props) => {
 

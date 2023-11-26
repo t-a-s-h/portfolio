@@ -3,34 +3,31 @@ import React from "react"
 import data from "./projectList.json"
 
 class Project {
-  constructor(title, image, url,  git="#", summary, technologies) {
+
+  constructor(title, image, url,  git="#", summary="", technologies=[], more="", next_steps) {
     this.title = title
     this.image = image
     this.url = url
     this.git = git
-    this.summary = summary
+    this.summary = more.description[0].substring(0,150)
+    this.next_steps = next_steps
+    this.more = more
     this.technologies = technologies
-
-    this.link = function (linkText,url=this.url) {
-      return (
-        <a key={linkText} className="sm-text-decoration-none" href={url} target="_blank" rel="noreferrer">{linkText}</a>
-      )
-    }
-    this.description = function () {
-      return <p key={this.title + ' description'}> {this.summary.replaceJSX("___", this.link(this.title.toTitleCase()))}</p>
-    }
   }
 }
 
 const projects = data.projects.map(project => {
+  console.log(project.summary)
   return new Project(
     project.title,
     project.image,
     project.url,
     project.git,
     project.summary,
-    project.technologies
-    )
+    project.technologies,
+    project.more,
+    project.next_steps
+  )
 })
 
 export default projects

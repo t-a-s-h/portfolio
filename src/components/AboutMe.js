@@ -15,11 +15,12 @@ const AboutMe = () => {
                                 </div>
                             </div>
                             <div className="col-lg-6 my-auto order-2 order-lg-1">
-                                <div className="call mx-auto text-dark text-left">
+                                <div className="call intro mx-auto text-dark text-left">
                                     <p>Hey, my name is Natasha.</p>
                                     <p>I'm a front-end developer and recent grad of the University of Waterloo.
                                     I have also recently completed the University of Toronto Coding Bootcamp. 
                                     Using my tech savvy and design skills, I create elegant websites and apps.</p>
+                                    <div className="sb"></div>
                                 </div>
                             </div>
 
