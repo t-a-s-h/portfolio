@@ -1,8 +1,8 @@
 import React from 'react'
-import { technologies } from "../componentFiles/skillsList.json"
+import data from "../componentFiles/skillsList.json"
 
 const mapTechToInfo = (techUsed) => {
-    return technologies.find(tech => (
+    return data.technologies.find(tech => (
         techUsed === tech.name
     )) || { name : techUsed }
 }

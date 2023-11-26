@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "./components/Main";
 import projects from "./componentFiles/projectList";
-import { images } from './files_to_write'
 import Rise from "./script"
 import $ from "jquery"
 
@@ -24,15 +23,6 @@ const App = () => {
   useEffect(()=> {
     $('html').css('scrollBehavior', 'smooth')
     Rise()
-  },[])
-
-  // preloads images
-  useEffect(() => {
-    images.map(image=> {
-      const img = document.createElement('img')
-      img.src = `${process.env.PUBLIC_URL}/assets/images/${image}`
-      img.style=`display:'none'`
-    })
   },[])
 
   const [loading, setLoading] = useState(true)

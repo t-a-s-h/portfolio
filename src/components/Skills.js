@@ -1,5 +1,5 @@
 import React from "react"
-import { technologies } from "../componentFiles/skillsList.json"
+import data from "../componentFiles/skillsList.json"
 
 const Skills = () => {
     return (
@@ -9,7 +9,7 @@ const Skills = () => {
                     <div className="pb-2 m-0">
                         <h2 className="display-3 text-dark text-center">Here's what I know.</h2> 
                         <div className="skills-list text-center">
-                            { technologies.filter(({ skill }) => skill).map(({ name, desc, link }) => (
+                            { data.technologies.filter(({ skill }) => skill).map(({ name, desc, link }) => (
                                 <h4 key={name} aria-label={desc} className="d-inline">{name}</h4>
                             ))
                             }
