@@ -803,9 +803,10 @@ body:has(.modal) {
     height: 100vh;
 }
 
-.modal {
+.modal-el {
     position: fixed;
     display: flex;
+    z-index: 100;
     inset: 0;
     width: 100vw;
     height: 100vh;
@@ -815,7 +816,7 @@ body:has(.modal) {
     font-size: 0.9em !important;
 }
 
-.modal-contents {
+.modal-el .modal-contents {
     position: absolute;
     overflow-y: auto;
     inset: 2em 4em;
@@ -825,19 +826,19 @@ body:has(.modal) {
     margin-top: 2em;
 }
 
-.modal-box  header {
+.modal-el .modal-box  header {
     padding-top: 1em;
     height: 3em;
 }
 
-.modal-box > header  h3 {
+.modal-el .modal-box > header  h3 {
     margin-inline: 1em;
     text-align: center;
     line-height: 0.9;
     padding-bottom: 5em;
 }
 
-.modal-box {
+.modal-el .modal-box {
     background-color: transparent;
     overflow: hidden;
     position: relative;
@@ -849,7 +850,7 @@ body:has(.modal) {
     border: goldenrod;
 }
 
-.night .modal-box {
+.night .modal-el .modal-box {
     background-image: conic-gradient(at top left, #0005, #305978,#1c365e), conic-gradient(at bottom right, #fff5, #305978,#1c365e);
     color: #eee;
     border: 1px solid rgb(11, 22, 37);
@@ -860,7 +861,7 @@ body:has(.modal) {
     color: #b0b5c9;
 }
 
-.modal-box::after  {
+.modal-el .modal-box::after  {
     position: absolute;
     display: block;
     content: '';
@@ -873,7 +874,7 @@ body:has(.modal) {
 }
 
 
-.night .modal-box::after  {
+.night .modal-el .modal-box::after  {
     position: absolute;
     display: block;
     content: '';
@@ -885,7 +886,7 @@ body:has(.modal) {
     bottom: 0;
 }
 
-.modal-box .exit {
+.modal-el .modal-box .exit {
     display: block;
     position: absolute;
     right: 0.2em;

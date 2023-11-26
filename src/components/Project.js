@@ -4,7 +4,6 @@ import Modal from "./Modal";
 import ALink from "./ALink";
 
 const Project = (props) => {
-    console.log(props)
 
     const [showMore, setShowMore] = useState(false)
 

@@ -17,7 +17,6 @@ class Project {
 }
 
 const projects = data.projects.map(project => {
-  console.log(project.summary)
   return new Project(
     project.title,
     project.image,

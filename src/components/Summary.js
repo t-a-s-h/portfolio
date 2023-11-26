@@ -5,8 +5,6 @@ import replaceJSX from '../componentFiles/replaceWithComponent'
 import ALink from "./ALink";
 
 const Summary = (props) => {
-    console.log(props)
-    // const project = document.body.querySelector(`#${props.title.replaceAll(" ","-")}`)
     return (
         <div key={props.title} className="summary col-md-6 call my-auto text-dark px-md-5 font-weight-normal p-md-2 p-0">
             <div className="sub" key={props.title + ' description'}>
