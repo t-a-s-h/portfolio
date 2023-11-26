@@ -151,3 +151,4 @@ src/Resume/coverLetter*.html
 test.html
 
 package-lock.json
+.vercel

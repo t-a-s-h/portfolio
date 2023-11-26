@@ -5,8 +5,7 @@ const ShowMore = ({setShowMore})=> {
     return (
         <span className="more">
             <a onClick= {({target}) => {
-                console.log(target.closest('article'))
-                target.closest('article').scrollIntoViewIfNeeded()
+                target.closest('article').scrollIntoView()
                 setShowMore(true)}} >
             more <i className="fas fa-chevron-circle-down"></i>
             </a>
