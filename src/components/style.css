@@ -55,17 +55,30 @@
     border-image: linear-gradient(90deg, transparent 25%,#4683b47f, transparent 75%) 100 / 0 0 3px 0;
 }
 
-.modal-box :is(h1,h2,h3,h4,h5,h6) {
+.modal-box :is(h4,h5,h6):not(:first-child) {
     padding-top: 1.5em;
 }
 
-.night .modal-box :is(h1,h2,h3,h4,h5,h6) {
+.modal-box h3 {
+    color: rgba(57, 43, 8, 0.6);
+}
+
+.night .modal-box :h3 {
+    color: #8187a2;
+}
+
+.modal-box :is(h4,h5,h6) {
+    color: rgba(114, 86, 16, 0.7);
+}
+
+.night .modal-box :is(h4,h5,h6) {
     color: #b0b5c9;
 }
 
 .sub > :not(.more){
     mask-image: linear-gradient(to right,black 50%, transparent calc(100% - 6.5ch)), linear-gradient(to bottom, black 3.5em, transparent 3.5em);
     mask-composite: add;
+    margin: 0.5em;
 }
 
 
@@ -76,7 +89,7 @@
     margin: 0em 0.5em 1em 1em;
     position: absolute;
     right: 0;
-    bottom: -0.25em;
+    bottom: -0.75em;
 }
 
 .summary.text-dark {
@@ -248,7 +261,7 @@ section {
 
 #skills *, #resume * , #portfolio > *, #about_me *, #toc * {
     z-index: 2;
-    will-change: opacity;
+    /* will-change: opacity; */
 }
 
 /* #skills, #home {
@@ -694,7 +707,7 @@ p a, .call a {
 }
 
 p a:hover, .call a:hover {
-    text-shadow: 0 0 5px white, 0 0 15px white, 0 0 20px white;
+    text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
     color: #0056b3;
 }
 
@@ -763,6 +776,7 @@ p a:hover, .call a:hover {
 
 .tech ul {
     display: inline;
+    padding: 0;
 }
 
 .tech ul > li {
@@ -811,7 +825,7 @@ footer {
     display: none;
 }
 
-body:has(.modal) {
+body:has(.modal-el) {
     overflow: hidden;
     height: 100vh;
 }
@@ -819,14 +833,26 @@ body:has(.modal) {
 .modal-el {
     position: fixed;
     display: flex;
-    z-index: 100;
+    z-index: 1050;
+    isolation: isolate;
     inset: 0;
     width: 100vw;
     height: 100vh;
     background-color: #0008;
     display: block !important;
-    animation: 1s linear fade;
     font-size: 0.9em !important;
+}
+
+.modal-el.add {
+    animation: fade 1s ease 0s 1 normal forwards;
+}
+
+.modal-el.remove {
+    animation: fade 0.5s ease 0s 1 reverse forwards;
+}
+
+.modal-el .modal-contents > * {
+    margin-inline: 0.75rem;
 }
 
 .modal-el .modal-contents {
@@ -880,7 +906,7 @@ body:has(.modal) {
     content: '';
     width: 100%;
     height: 20%;
-    background-image: linear-gradient(90deg, #f1efe4, #e4e0d6 75%);
+    background-image: linear-gradient(90deg, #fdfbf2, #f7f1e0 75%);
     mask: linear-gradient(transparent, black 50%);
     box-shadow: 0 0 50px #f1efe4;
     bottom: 0;

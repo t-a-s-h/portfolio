@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef, useState } from "react"
 import Navbar from "./Navbar";
 import ProjectIntro from "./ProjectIntro"
 import Splash from "./Splash";
@@ -7,11 +7,23 @@ import Footer from "./Footer";
 import Projects from "./Projects"
 import NavMobile from "./NavMobile";
 import Skills from "./Skills";
+import Modal from "./Modal";
+
 import './style.css'
 
 const Main = (props) => {
+    const [showMore, setShowMore] = useState(false)
+    const curr_project = useRef(null)
 
     return (
+        <>
+        {showMore && 
+            <Modal 
+                mod_title={props.title}
+                more={props.projects[curr_project.current].more}
+                setShowMore={setShowMore}
+                url={props.url}
+        />}
         <main id="main_page">
             <Navbar
             titles={props.titles}
@@ -25,6 +37,9 @@ const Main = (props) => {
                     <div className="row w-100 my-auto"> 
                         <div className="col-md-12 p-0">
                             <Projects
+                                curr_project={curr_project}
+                                showMore={showMore}
+                                setShowMore={setShowMore}
                                 projects={props.projects}
                             />
                     </div>
@@ -34,7 +49,7 @@ const Main = (props) => {
                 <Footer />
                 <NavMobile/>
         </main>
-
+        </>
     )
 }
 

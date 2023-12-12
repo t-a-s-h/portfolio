@@ -7,13 +7,13 @@ const startHeadingLevel = 4
 const makeSections = (el,title,url,i = startHeadingLevel) => {
     const CustomTag = `h${i}`
     if (el instanceof Array) {
-        return el.map((item,j) => <Fragment key={`item${j+1}`}>{makeSections(item,title,url,++i)}</Fragment>)
+        return el.map((item,j) => <Fragment key={`paragraph ${j+1}`}>{makeSections(item,title,url,++i)}</Fragment>)
     }
     else if (el instanceof Object) {
         return Object.entries(el).map(([key,val],j) => <Fragment key={key}><CustomTag>{key}</CustomTag><div key={`item${j+1}`}>{makeSections(val,title,url,++i)}</div></Fragment>)
     }
-    else {            
-        return <p>{el.replaceJSX("___", <ALink key={title} linkText={title} url={url}/>)}</p>
+    else {       
+        return <p>{el?.replaceJSX()}</p>
     }
 }
 

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import Project from "./Project"
 
-const Projects = ({projects}) => {
+const Projects = ({ projects, showMore, setShowMore, curr_project }) => {
 
     useEffect(()=> {
         document.documentElement.style.cssText += `--num-projects:${projects.length}`
@@ -14,6 +14,9 @@ const Projects = ({projects}) => {
                 { projects.map((project,i) => (
                     <Project
                         key={project.title + ' project'}
+                        showMore={showMore}
+                        setShowMore={setShowMore}
+                        curr_project={curr_project}
                         index={i}
                         title={project.title}
                         link={project.link}

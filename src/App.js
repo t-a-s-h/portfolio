@@ -40,7 +40,7 @@ const App = () => {
 
 
 return (
-    <Router basename={'.'}>
+    <Router>
       <Switch>
         <Route path="/">
           <Main 

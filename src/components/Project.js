@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import Summary from "./Summary";
-import Modal from "./Modal";
+// import Modal from "./Modal";
 import ALink from "./ALink";
 
 const Project = (props) => {
 
-    const [showMore, setShowMore] = useState(false)
+    // const [showMore, setShowMore] = useState(false)
 
     return (
-        <>
-        {showMore && <Modal 
-            setShowMore={setShowMore}
-            showMore={showMore}
-            more={props.more}
-            mod_title={props.title}
-            url={props.url}
-        />}
+    //     <>
+    //     {showMore && <Modal 
+    //         setShowMore={setShowMore}
+    //         showMore={showMore}
+    //         more={props.more}
+    //         mod_title={props.title}
+    //         url={props.url}
+    //     />}
         <article key={props.title} id={props.title.replaceAll(" ","-")} className="d-flex container-fluid p-md-2 mb-4 min-vh-100 mb-md-0">
             
             { props.show_modal && <div className="modal_contents">lorem ipsum sit dolar amet</div> }
@@ -33,6 +33,7 @@ const Project = (props) => {
                     <Summary
                         key={props.title + ' summary'}
                         title={props.title}
+                        index={props.index}
                         description={props.description}
                         more={props.more}
                         next_steps={props.next_steps}
@@ -50,13 +51,14 @@ const Project = (props) => {
                                 )}
                             } 
                         technologies={props.technologies}
-                        setShowMore={setShowMore}
-                        showMore={showMore}
+                        setShowMore={props.setShowMore}
+                        showMore={props.showMore}
+                        curr_project={props.curr_project}
                     />
                 </div>
             </div>
         </article>
-        </>
+        // </>
     )
 }
 

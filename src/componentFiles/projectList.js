@@ -16,8 +16,8 @@ class Project {
   }
 }
 
-const projects = data.projects.map(project => {
-  return new Project(
+const projects = data.projects.map((project,i) => {
+  return {...new Project(
     project.title,
     project.image,
     project.url,
@@ -26,7 +26,7 @@ const projects = data.projects.map(project => {
     project.technologies,
     project.more,
     project.next_steps
-  )
+  ),index: i}
 })
 
 export default projects
