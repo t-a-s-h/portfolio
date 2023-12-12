@@ -46,7 +46,7 @@ const Rise = () => {
         .then(function(data) {
             let sunrise = moment(data.results.sunrise);
             let sunset = moment(data.results.sunset);
-            // document.body.classList.toggle("night",!(moment().isBetween(sunrise,sunset)));
+            document.body.classList.toggle("night",!(moment().isBetween(sunrise,sunset)));
             return data.results;
         })
         .catch(err => {
@@ -60,7 +60,7 @@ const Rise = () => {
             }
         })
         .then(res => {
-            let lightness = brightness(moment().hour(10),res)
+            let lightness = brightness(moment(),res)
             let HSL = `hsl(197, 71%, ${lightness * 70}%)`
             let skylight = `hsla(197, 90%, ${lightness * 80 + 15}%, ${(1 - lightness) * 100}%)`
             document.documentElement.style = `--sky-color:${HSL}; --sky-light-color:${skylight}`
