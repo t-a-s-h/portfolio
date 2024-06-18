@@ -37,20 +37,19 @@ const Rise = () => {
     sunDiv.appendChild(svg);
 
     let url = "https://api.sunrise-sunset.org/json?lat=43.4643&lng=-80.5204&formatted=0&date=";
-    let date = moment().format("YYYY-MM-DD");
+    const date = moment().format("YYYY-MM-DD");
     url += date;
     fetch(url)
         .then(function(response) {
             return response.json()
         })
         .then(function(data) {
-            let sunrise = moment(data.results.sunrise);
-            let sunset = moment(data.results.sunset);
-            document.body.classList.toggle("night",!(moment().isBetween(sunrise,sunset)));
-            return data.results;
+            console.log('success')
+            return { ...data.results };
         })
         .catch(err => {
-            if (err) {
+            if (err) {       
+                console.log('error')    
                 return {
                     sunrise: moment().hour(6),
                     sunset: moment().hour(18),
@@ -60,9 +59,11 @@ const Rise = () => {
             }
         })
         .then(res => {
-            let lightness = brightness(moment(),res)
-            let HSL = `hsl(197, 71%, ${lightness * 70}%)`
-            let skylight = `hsla(197, 90%, ${lightness * 80 + 15}%, ${(1 - lightness) * 100}%)`
+            console.log(res)
+            document.body.classList.toggle("night",!moment().isBetween(res.sunrise,res.sunset));
+            const lightness = brightness(moment(),res)
+            const HSL = `hsl(197, 71%, ${lightness * 70}%)`
+            const skylight = `hsla(197, 90%, ${lightness * 80 + 15}%, ${(1 - lightness) * 100}%)`
             document.documentElement.style = `--sky-color:${HSL}; --sky-light-color:${skylight}`
         })
 

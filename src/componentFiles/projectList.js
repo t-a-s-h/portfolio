@@ -1,5 +1,5 @@
 import replaceJSX from "./replaceWithComponent"
-import React from "react"
+// import React from
 import data from "./projectList.json"
 
 class Project {

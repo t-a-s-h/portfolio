@@ -19,7 +19,7 @@ const Main = (props) => {
         <>
         {showMore && 
             <Modal 
-                mod_title={props.title}
+                mod_title={props.projects[curr_project.current].title}
                 more={props.projects[curr_project.current].more}
                 setShowMore={setShowMore}
                 url={props.url}

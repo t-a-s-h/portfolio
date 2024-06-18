@@ -1,21 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Summary from "./Summary";
-// import Modal from "./Modal";
 import ALink from "./ALink";
 
 const Project = (props) => {
 
-    // const [showMore, setShowMore] = useState(false)
-
     return (
-    //     <>
-    //     {showMore && <Modal 
-    //         setShowMore={setShowMore}
-    //         showMore={showMore}
-    //         more={props.more}
-    //         mod_title={props.title}
-    //         url={props.url}
-    //     />}
         <article key={props.title} id={props.title.replaceAll(" ","-")} className="d-flex container-fluid p-md-2 mb-4 min-vh-100 mb-md-0">
             
             { props.show_modal && <div className="modal_contents">lorem ipsum sit dolar amet</div> }
@@ -24,7 +13,7 @@ const Project = (props) => {
                 <div className="row mx-2">
                     <div className="col-md-6 img-fluid m-auto p-md-2 p-0">     
                         <div className="frame mx-auto">
-                        <a target="_blank" href={props.url}>
+                        <a target="_blank" rel="noreferrer" href={props.url}>
                             <img className="img-thumbnail rounded-0 d-block text-dark w-25" src={process.env.PUBLIC_URL + props.image} alt={props.title}></img>
                         </a>
                         </div>

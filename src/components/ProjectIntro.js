@@ -6,7 +6,7 @@ const getRef = (title) => {
 
 const ProjectIntro = (props) => {
     return (
-        <article id="toc" className="container-fluid d-flex align-items-center flex-column p-md-2 p-0">
+        <article id="toc" className="vh-100 container-fluid d-flex align-items-center flex-column p-md-2 p-0">
             <div className="row my-auto mx-auto"> 
                 <div className="col-md-12 p-md-2 p-0">
                     <div className="pb-2 m-0">

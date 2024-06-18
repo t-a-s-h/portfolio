@@ -60,7 +60,7 @@
 }
 
 .modal-box h3 {
-    color: rgba(57, 43, 8, 0.6);
+    color: rgba(114, 86, 16, 0.9);
 }
 
 .night .modal-box :h3 {
@@ -75,21 +75,23 @@
     color: #b0b5c9;
 }
 
+.night .sub a, .night .tech a, .night .modal-contents a {
+    color: rgb(147, 213, 255);
+}
+
+/* .night .tech a {
+    color: #96d2e6;
+} */
+
 .sub > :not(.more){
     mask-image: linear-gradient(to right,black 50%, transparent calc(100% - 6.5ch)), linear-gradient(to bottom, black 3.5em, transparent 3.5em);
     mask-composite: add;
     margin: 0.5em;
 }
 
-
-.sub  .more {
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 0;
-    margin: 0em 0.5em 1em 1em;
-    position: absolute;
-    right: 0;
-    bottom: -0.75em;
+.sub  .more button {
+    background-color: transparent;
+    color: inherit;
 }
 
 .summary.text-dark {
@@ -121,6 +123,17 @@
     text-align: justify;
 }
 
+#main_page .sub  .more {
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    /* box-sizing: border-box; */
+}
+
 #portfolio article, #about_me > div {
     max-width: 1200px;
 }
@@ -135,23 +148,23 @@
 }
 
 #main_page .display-1 {
-    font-size: clamp(3.5rem, 12vw, 6rem) !important;
+    font-size: clamp(5rem, 10vw, 6rem) !important;
 }
 
 #main_page .display-2 {
-    font-size: clamp(3rem, 10vw, 5rem) !important;
+    font-size: clamp(4rem, 8vw, 5rem) !important;
     word-wrap: break-all;
     hyphens: auto;
 }
 
 #main_page .display-3 {
-    font-size: clamp(2.75rem, 8vw, 4rem) !important;
+    font-size: clamp(3rem, 6vw, 4rem) !important;
     word-wrap: break-all;
     hyphens: auto;
 }
 
 #main_page .display-4 {
-    font-size: clamp(2.25rem, 6vw, 3rem) !important;
+    font-size: clamp(2rem, 4vw, 3rem) !important;
     word-wrap: break-all;
     hyphens: auto;
 }
@@ -263,10 +276,6 @@ section {
     z-index: 2;
     /* will-change: opacity; */
 }
-
-/* #skills, #home {
-    z-index: 1;
-} */
 
 #portfolio {
     background-repeat: repeat-y;
@@ -524,10 +533,6 @@ li.nav-item > a.nav-link {
     color: white;
 }
 
-/* ul.sub-nav-content > li.nav-item:hover > a.nav-link {
-    color: var(--nav-color);
-} */
-
 /* increases hoverable area above and below the sub navigation */
 .sub-nav:hover:after {
     content: '';
@@ -647,17 +652,22 @@ p {
 
 .project-list a {
     font-size: 1.5rem !important;
+    border-radius: 50%;
+    text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
+
 }
 
 .project-list > h3::before {
     content: "    \2605";
-    color: #007bff;
+    color: inherit;
+    text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;;
     opacity: 0.3;
 }
 
 .project-list > h3::after {
     content: "\2605";
-    color: #007bff;
+    color: inherit;
+    text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
     opacity: 0.3;
 }
 
@@ -687,8 +697,8 @@ p {
 }
 
 .skills-list > h4 {
-    background: hsl(147, 61%, 50%);
-    box-shadow: 0 15px hsl(147, 81%, 40%);
+    background: hsl(147, 61%, 35%);
+    box-shadow: 0 15px hsl(147, 81%, 25%);
     border-radius: 50% 50% 1rem 1rem;
     position: absolute;
     display: block;
@@ -700,13 +710,13 @@ p a {
 
 }
 
-p a, .call a {
+p a, .call a, .sub  .more button {
     transition: all 0.2s linear;
-    text-decoration: none !important;
+    /* text-decoration: none !important; */
     line-height: 100%;
 }
 
-p a:hover, .call a:hover {
+p a:hover, .call a:hover, .sub  .more button:hover {
     text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
     color: #0056b3;
 }
@@ -743,7 +753,7 @@ p a:hover, .call a:hover {
     position: relative;
 }
 
-#portfolio [aria-label]:after {
+#portfolio [aria-label]::after {
     content: attr(aria-label);
     opacity: 0;
     position: absolute;
@@ -753,9 +763,9 @@ p a:hover, .call a:hover {
     padding: 0.25rem;
     border-radius: 0.25rem;
     white-space: wrap;
-    font-size: 0.6rem;
-    font-family: Arial;
-    background: white !important;
+    font-size: .85rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: #ffffffee !important;
     box-shadow: #00000044 1px 1px 3px;
     pointer-events: none;
     white-space: normal;
@@ -764,8 +774,14 @@ p a:hover, .call a:hover {
     z-index: 500;
 }
 
-#portfolio [aria-label]:hover:after {
-    animation: fade 0.5s ease-in-out 0.5s 1 normal forwards;
+#portfolio [aria-label]::after {
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+#portfolio [aria-label]:hover::after {
+    opacity: 1;
+    color: #0056b3;
 }
 
 .tech {
@@ -800,6 +816,10 @@ p a:hover, .call a:hover {
     background: hsl(34, 57%, 90%);
     width: 14rem;
     border-radius: 2px;
+}
+
+.project-links a {
+    color: #0056b3;
 }
 
 footer {
@@ -870,7 +890,7 @@ body:has(.modal-el) {
     height: 3em;
 }
 
-.modal-el .modal-box > header  h3 {
+.modal-el .modal-box > header h3 {
     margin-inline: 1em;
     text-align: center;
     line-height: 0.9;
@@ -904,7 +924,7 @@ body:has(.modal-el) {
     position: absolute;
     display: block;
     content: '';
-    width: 100%;
+    inset-inline: 0;
     height: 20%;
     background-image: linear-gradient(90deg, #fdfbf2, #f7f1e0 75%);
     mask: linear-gradient(transparent, black 50%);
@@ -946,6 +966,12 @@ body:has(.modal-el) {
 
     .sun_moon svg {
         animation: rise-mobile 2s ease 0s 1 reverse forwards;
+        height: 200vh;
+    }
+
+    .sun_moon circle {
+        cy: 100vw;
+        r: 100vw;
     }
 
     #navbarNav > ul > li {
