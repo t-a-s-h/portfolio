@@ -109,7 +109,7 @@
             "name": "Sequelize",
             "desc": "Sequelize is a promise-based Node.js ORM.",
             "link": "http://sequelize.org/",
-            "skill": true
+            "skill": false
         },
         {
             "name": "Passport",

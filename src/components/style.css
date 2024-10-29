@@ -802,6 +802,8 @@ p a:hover, .call a:hover, .sub  .more button:hover {
 
 .tech ul > li > a {
     white-space: nowrap;
+    color: rgb(0, 123, 255) !important;
+    cursor: default;
 }
 
 .tech ul > li:not(:last-child):after {

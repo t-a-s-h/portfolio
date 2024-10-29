@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react"
 import Navbar from "./Navbar";
-import ProjectIntro from "./ProjectIntro"
 import Splash from "./Splash";
 import AboutMe from "./AboutMe";
 import Footer from "./Footer";
@@ -30,9 +29,6 @@ const Main = (props) => {
             />
             <Splash />
             <AboutMe />
-            <ProjectIntro 
-              titles={props.titles}
-            />
                 <section id="portfolio" className="container-fluid d-flex align-items-center flex-column px-0">
                     <div className="row w-100 my-auto"> 
                         <div className="col-md-12 p-0">

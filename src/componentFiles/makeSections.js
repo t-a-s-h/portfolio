@@ -12,7 +12,7 @@ const makeSections = (el,title,url,i = startHeadingLevel) => {
     else if (el instanceof Object) {
         return Object.entries(el).map(([key,val],j) => <Fragment key={key}><CustomTag>{key}</CustomTag><div key={`item${j+1}`}>{makeSections(val,title,url,++i)}</div></Fragment>)
     }
-    else {       
+    else {
         return <p>{el?.replaceJSX()}</p>
     }
 }
