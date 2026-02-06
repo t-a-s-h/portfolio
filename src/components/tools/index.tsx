@@ -14,7 +14,6 @@ export function Tools() {
     const scroll = (element : HTMLElement | null, back : Boolean = true) => {
         if (! element) return;
         element.scrollBy({left: back ? -150 : 150, behavior: "smooth"});
-        console.log(element)
     }
 
     return (

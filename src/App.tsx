@@ -18,9 +18,7 @@ const componentList : Record<string, React.ComponentType<ComponentProps>> = {
 
 export function useChangeDisplay(changers: any[], display : Element | null) {
   useEffect(()=>{
-    console.log(display)
     if (! display) return
-      console.log(changers, "up", display)
       display.classList.add("transition")
       display.classList.remove("in")
       setTimeout(()=>display.classList.add("transition","in"), 50)

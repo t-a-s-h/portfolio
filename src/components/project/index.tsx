@@ -13,7 +13,7 @@ export function Project( { project } : projectProps) {
             <div className="image">
                 <div className="circle"></div>
                 <Laptop/>
-                <img alt={project.title} src={`/src/assets/${project.image}`}/>
+                <img alt={project.title} src={`%PUBLIC_URL%/${project.image}`}/>
             </div>
         </article>
     )

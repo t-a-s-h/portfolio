@@ -13,7 +13,7 @@ YouTube video Hangman is a Weird Game.`,
                 target : "GitHub",
                 url : "#",
             },
-                        {
+            {
                 target : "Demo",
                 url : "#",
             },
