@@ -1,0 +1,61 @@
+#tools .tool.element {
+    display: grid;
+    grid-area: tool;
+}
+
+#tools .blurb {
+    grid-area: info;
+}
+
+#tools .image {
+    grid-area: image;
+    position: relative;
+}
+
+#tools .image svg {
+    width: 30ch;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.color3 .circle {
+    background-color: var(--text-color-accent) !important;
+}
+
+.color2 .circle {
+    background-color: var(--fg-color) !important;
+}
+
+.color1 .circle {
+    background-color: var(--accent-color) !important;
+}
+
+.color1 svg {
+    color: var(--text-color-accent) !important;
+}
+
+.color2 svg {
+    color: var(--text-color-accent) !important;
+}
+
+.color3 svg {
+    color: var(--text-color) !important;
+}
+
+#tools .tool.element header {
+    grid-area: header;
+}
+
+#tools h1 span.name {
+    color: var(--fg-color);
+}
+
+#tools .tool.element .blurb .desc {
+    padding: 2rem;
+    align-self: end;
+    border-radius: 1rem;
+    border: 2px solid var(--bg-color-muted);
+}

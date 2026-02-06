@@ -1,0 +1,1056 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+#root {
+    font-family: 'Source Code Pro', monospace;
+    --nav-color: #333;
+    --show-info-speed: 0.5s;
+}
+
+:root {
+    scroll-behavior: smooth;
+    --sky-color:hsl(197, 71%, 75%);
+}
+
+@keyframes rise {
+    from {top: 100vh;}
+    to {top: 10vh;}
+}
+
+@keyframes mobile-nav {
+    from {
+        max-height: 100%;
+    }
+    to {
+        max-height: 5px;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide {
+    from {
+        left: 0;
+    }
+    to {
+        transform-origin: top right;
+        scale: 1.5;
+        left: 32.5%;
+    }
+}
+
+.night .text-dark:not(nav) {
+    text-shadow: 0px 0px 3px white !important;
+}
+
+.modal-contents > div:not(:last-of-type) {
+    padding-bottom: 1.5em;
+    border-width: 0 0 3px 0;
+    border-image: linear-gradient(90deg, transparent 25%,#daa52080,transparent 75%) 100 / 0 0 3px 0;
+}
+
+.night .modal-contents > div:not(:last-of-type) {
+    border-image: linear-gradient(90deg, transparent 25%,#4683b47f, transparent 75%) 100 / 0 0 3px 0;
+}
+
+.modal-box :is(h4,h5,h6):not(:first-child) {
+    padding-top: 1.5em;
+}
+
+.modal-box h3 {
+    color: #c9b580;
+}
+
+.night .modal-box h3 {
+    color: #8187a2;
+}
+
+.modal-box :is(h4,h5,h6) {
+    color: rgba(114, 86, 16, 0.7);
+}
+
+.night .modal-box :is(h4,h5,h6) {
+    color: #b0b5c9;
+}
+
+.night .modal-contents a {
+    color: rgb(147, 213, 255);
+}
+
+.sub > :not(.more){
+    mask-image: linear-gradient(to right,black 50%, transparent calc(100% - 6.5ch)), linear-gradient(to bottom, black 3.5em, transparent 3.5em);
+    mask-composite: add;
+    margin: 0.5em;
+}
+
+.sub  .more button {
+    background-color: transparent;
+    color: inherit;
+}
+
+.summary.text-dark {
+    color: inherit !important;
+}
+
+.summary h3 {
+    text-align: center;
+    word-break: keep-all;
+    hyphens: auto;
+}
+
+#main_page .summary .sub p {
+    font-size: 1.2rem !important;
+    line-height: 1.75em;
+    padding-bottom: 0.25rem;
+    word-break: keep-all;
+}
+
+#main_page .summary .sub {
+    position: relative;
+    box-sizing: content-box;
+    max-height: 5.25em;
+    margin-bottom: 1em;
+    width: fit-content;
+    position: relative;
+    overflow-y: hidden;
+    padding-bottom: 1em;
+    text-align: justify;
+}
+
+#main_page .sub  .more {
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+#portfolio article, #about_me > div {
+    max-width: 1200px;
+}
+
+#main_page section:not(#resume):before, #main_page article#toc::before { 
+    display: block; 
+    content: ''; 
+    margin-top: 32px; 
+    height: 32px;
+    visibility: hidden; 
+    pointer-events: none;
+}
+
+#main_page .display-1 {
+    font-size: clamp(5rem, 10vw, 6rem) !important;
+}
+
+#main_page .display-2 {
+    font-size: clamp(4rem, 8vw, 5rem) !important;
+    word-wrap: break-all;
+    hyphens: auto;
+}
+
+#main_page .display-3 {
+    font-size: clamp(3rem, 6vw, 4rem) !important;
+    word-wrap: break-all;
+    hyphens: auto;
+}
+
+#main_page .display-4 {
+    font-size: clamp(2rem, 4vw, 3rem) !important;
+    word-wrap: break-all;
+    hyphens: auto;
+}
+
+#home  .display-4 {
+    word-wrap: none;
+    hyphens: none;
+}
+
+section {
+    position: relative;
+    background-color: transparent !important;
+}
+
+.frame {
+    position: relative;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+    width: 80%;
+    height: auto !important;
+    margin-bottom: 0;
+    padding-bottom: 1rem !important;
+    border: 3px solid lightgrey;
+    padding: 3%;
+    border-bottom: none;
+    border-radius: 1rem 1rem 0 0;
+    background-color: black;
+    box-shadow: 0 0 1rem;
+}
+
+.frame:after {
+  display: block;
+  position: relative;
+  top: calc(0.7vw + 1rem) !important;
+  z-index: 100 !important;
+  content: "";
+  width: 25%;
+  height: 100%;
+  background-image: linear-gradient(90deg,#585858 0%, #707070 5%, #c0c0c0 10%, #c0c0c0 90%, #707070 95%, #585858 100%);
+  transform: perspective(10px) rotateX(-1deg);
+  border-radius: 0 0 0.5rem 0.5rem;
+  margin: 0 auto;
+}
+
+.frame img {
+    width: 100% !important;
+    margin: auto;
+    height: auto !important;
+    position: relative;
+    background: white;
+}
+
+.cover {
+    display: block;
+    position: relative;
+    height: 1rem;
+    width: 100%;
+    background-color: lightGrey;
+    border-radius: 2px;
+    background-image: linear-gradient(90deg,grey 0, white 2%, lightGrey 5%, grey 10%, lightGrey 50%, grey 90%, lightGrey 95%, white 98%, grey 100%);
+    margin-bottom: 2rem;
+}
+
+.cover:after {
+  content: "";
+  display: block;
+  position: relative;
+  top: 1rem;
+  left: 1%;
+  box-shadow: 0 0.5rem 1rem;
+  width:98%;
+  height: 50%;
+  background-image: linear-gradient(0deg,#585858 0%, #707070 25%, #c0c0c0 100%);
+  transform: perspective(10px) rotateX(-1deg);
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.sun_moon {
+    mix-blend-mode: screen;
+    position: absolute;
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+}
+
+.sun_moon svg {
+    position: fixed;
+    left: calc(50% - 50vw);
+    fill: transparent;
+    stroke: none;
+    animation: rise 2s ease 0s 1 normal forwards;
+    height: 100vw;
+    width: 100vw;
+}
+
+.sun_moon > svg > circle {
+    fill: gold;
+    z-index: -1;
+}
+
+.night .sun_moon > svg > circle {
+    fill: #cdd0df !important;
+    z-index: -1;
+}
+
+#portfolio {
+    background-repeat: repeat-y;
+}
+
+.me img {
+    z-index: 4;
+    position: absolute;
+    width: auto;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid #00000088;
+    background-color: #ffffff88;
+    shape-outside: circle(50%);
+    inset: 0;
+    margin: auto;
+}
+
+.me {
+    width: 100%;
+    height: 0;
+    position: relative;
+    z-index: 4;
+    padding-bottom: 100%;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+}
+
+#portfolio article:not(#toc) {
+    margin-block: 25vh;
+    box-sizing: border-box;
+    position: relative;
+    scroll-margin-top: 25vh;
+}
+
+#portfolio article:not(#toc):nth-of-type(3n) {
+    background-color: #ffffffcc;
+    border-radius: 50% 100px 50% 100px;
+}
+
+#portfolio article:not(#toc):nth-of-type(3n + 1) {
+    background-color: #ffffffcc;
+    border-radius: 50% 50% 100px 50%;
+}
+
+#portfolio article:not(#toc):nth-of-type(3n + 2) {
+    background-color: #ffffffcc;
+    border-radius: 100px 50% 25% 50%;
+}
+
+article:has(.call.intro) {
+    background-color: #ffffffcc;
+    border-radius: 25% 50% 25% 100px;   
+}
+
+section > *, article > * {
+    position: relative;
+    z-index: 10;
+}
+
+#skills * {
+    position: relative;
+}
+
+#portfolio {
+    background-color: var(--sky-color);
+}
+
+body {
+    background-color: none !important;
+    background-size: auto 100vmax;
+    background-repeat: repeat;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 0;
+}
+
+main {
+    overflow-x: hidden;
+}
+
+footer span {
+    /* this simulates a border around the nav text */
+    text-shadow: 
+        -1px -1px 0 white,  
+        1px -1px 0 white,
+        -1px  1px 0 white,
+        1px  1px 0 white;
+    background-color: transparent;
+} 
+
+#main_page .mobile {
+    min-height: 30px;
+    height: auto;
+}
+
+#main_page .mobile > nav {
+    position: absolute;
+    bottom: 0;
+    min-height: auto;  
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    align-content: space-between;
+}
+
+#main_page .mobile > nav small {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    padding: 0;
+}
+
+#main_page .mobile > nav > ul {
+    background: white;
+    border-radius: 0.5rem 0.5rem 0 0;
+    border: 1px solid var(--nav-color);
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#main_page .mobile > nav  > ul > li {
+    display: inline;
+    font-size: x-large;
+    width: 25%;
+    line-height: 1rem;
+}
+
+#main_page .mobile > nav > ul > li > a {
+    color: #888;
+}
+
+#main_page .mobile > nav > ul > li > a:hover{
+    text-decoration: none;
+}
+
+.navigation {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 1rem 1rem 0;
+}
+
+#navbarNav > ul > li {
+    position: relative !important;
+    background-color: white;
+    width: auto !important;
+    min-width: 6em;
+    text-align: center;
+    float: right;
+}
+
+#navbarNav > ul > li.nav-item:hover {
+    background-color: var(--nav-color);
+}
+
+#navbarNav > ul > li.nav-item:hover > a {
+    color: white;
+}
+
+nav * {
+    background-color: transparent;
+    width: auto;
+}
+
+.nav-item :has(.sub-nav-content) {
+    display: block;
+}
+
+.sub-nav-content {
+  display: none;
+  overflow: hidden;
+  position: absolute;
+  right: -5em;
+  width: max-content;
+  flex-basis: 100%;
+  flex-shrink: none !important;
+  background-color: var(--nav-color);
+  justify-content: flex-end;
+  flex: row;
+  border-radius: 2rem 0 2rem 2rem;
+  display: flex !important;
+  transition: all 0.25s linear;
+  max-height: 0;
+  padding-inline: 1.5rem !important;
+}
+
+.sub-nav-content > li:hover{
+    background-color: white;
+    color: var(--nav-color);
+}
+
+#navbarNav .sub-nav-content > li.nav-item:hover > a.nav-link{
+    color: var(--nav-color);
+}
+
+#navbarNav > .navbar-nav > .nav-item, .sub-nav{
+    border-radius: 2em 2em 0 0;
+}
+
+#navbarNav > .navbar-nav > .nav-item:first-child {
+    border-radius: 2em 2em 0 2em;
+}
+
+#navbarNav > .navbar-nav > .nav-item:last-child {
+    border-radius: 2em 2em 2em 0;
+}
+
+.sub-nav {
+  float: right;
+  width: auto;
+  cursor: pointer;
+}
+
+.nav-item, .sub-nav, .sub-nav * {
+    cursor: pointer !important;
+}
+
+.nav-item :has(.sub-nav:hover) {
+    overflow: unset !important;
+}
+
+ul.sub-nav > li {
+  display: inline;
+}
+
+.sub-nav:hover .sub-nav-content {
+    max-height: 200%;
+}
+
+li.nav-item:hover a.nav-link {
+    color: white;
+}
+
+li.nav-item a.nav-link {
+    color: var(--nav-color);
+}
+
+.sub-nav-content li.nav-item > a.nav-link {
+    color: white;
+}
+
+/* chrome hover gap error workaround (moslty working) */
+/* please do not change */
+.nav-item:has(.sub-nav)::after {
+    content: '';
+    z-index: 1;
+    position: absolute;
+    bottom: 0px;
+    /* buffer around item */
+    left: -10px;
+    right: -10px;
+    /* *** */
+    height: 2px; /* not 1px -- avoids errors b/c of fast moving cursor */
+    cursor: none !important;
+    background-color: transparent;
+}
+
+/* same as above on the ul for contacts */
+.contacts > ul::after {
+    content: ''; 
+    z-index: 100;
+    position: absolute;
+    bottom: -1px;
+    /* buffer around item */
+    left: 0px;
+    right: 0px;
+    /* *** */
+    height: 1px;
+    cursor: none !important;
+    background-color: transparent;
+}
+
+.nav-items > li {
+    display: inline;
+}
+
+.contacts {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.contacts > ul {
+    cursor: pointer !important;
+}
+
+.contacts > ul > li {
+    background: white;
+    box-shadow: 0 0 15px white;
+    display: inline;
+    padding: 0.5rem;
+    border-radius: 9999px 9999px 0 0;
+    font-size: max(18px, 100%);
+    vertical-align: baseline;
+    box-shadow: none;
+}
+
+.contacts > ul {
+    padding: 0;
+    margin: 0;
+}
+
+.contacts > ul > li > a {
+    color: var(--nav-color);
+    display: inline-block;
+    line-height: 2rem;
+}
+
+.contacts > ul > li:hover a {
+    color: white;
+}
+
+.contacts > ul > li:hover {
+    background: var(--nav-color);
+}
+
+.contacts > ul:hover li:first-child {
+    padding-bottom: 1.25rem;
+}
+
+.contacts > ul > li:hover > a:first-child > i{
+    color: whitesmoke;
+}
+
+.contacts > ul > li:hover > a:first-child > i {
+    color: whitesmoke;
+}
+
+.contacts > ul > li a:not(:first-child) {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    font-size: 0.7rem;
+    border-radius: 0 1rem 1rem 1rem;
+    padding: 0 0.5rem;
+    display: none;
+}
+
+.contacts > ul > li:not(:first-child) a:not(:first-child) {
+    border-radius: 1rem;
+}
+
+.contacts > ul > li:hover > a:not(:first-child) {
+    background: var(--nav-color);
+    color: whitesmoke;
+    display: inline;
+    white-space: nowrap;
+}
+
+.jumbotron, .list-group, .list-group *, .card * {
+    background-color: transparent !important;
+}
+
+.card {
+    background-size: contain;
+    color: #222 !important;
+}
+
+input, textarea {
+    border: 1px solid #007bff33 !important;
+    border-radius: 0 !important;
+}
+
+input:focus, textarea:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(248,249,250,.5) !important;
+}
+
+p {
+    line-height: 1.5;
+}
+
+.project-list a {
+    font-size: 1.5rem !important;
+    border-radius: 50%;
+    text-shadow: 0 0 5px white;
+
+}
+
+.project-list > h3::before {
+    content: "    \2605"; /* hex for unicode star */
+    color: inherit;
+    text-shadow: 0 0 5px white;
+    opacity: 0.3;
+}
+
+.project-list > h3::after {
+    content: "\2605"; /* hex for unicode star */
+    color: inherit;
+    text-shadow: 0 0 5px white;
+    opacity: 0.3;
+}
+
+.skills-list {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 3rem auto;
+    width: 1024px;
+    max-width: 80%;
+    align-items: stretch;
+}
+
+.skills-list > h4 {
+    margin-top: -1rem;
+    margin-inline: -1px;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+    white-space: nowrap;
+}
+
+.skills-list > h4:hover {
+    background-color: hsl(147, 100%, 30%);
+    border-color: ivory;
+}
+
+.skills-list > h4 {
+    background: hsl(147, 61%, 35%);
+    box-shadow: 0 15px hsl(147, 81%, 25%);
+    border-radius: 50% 50% 1rem 1rem;
+    position: absolute;
+    display: block;
+    cursor: pointer;
+}
+
+.skills-list > h4:hover::after {
+    content: attr(aria-label);
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    width: 250%;
+    min-width: 10rem;
+    max-width: 15rem;
+    height: fit-content;
+    display: block;
+    font-size: small;
+    background-color: #663399;
+    white-space: wrap;
+    border-radius: 999px;
+    padding: 4rem 2rem 2rem 2rem;
+    border-radius: 50% 50% 50% 0;
+    text-align: left;
+}
+
+
+p a {
+    margin: 0;
+    border: none;
+}
+
+p a, .call a, .sub  .more button {
+    transition: all 0.2s linear;
+    line-height: 100%;
+}
+
+p a:hover, .call a:hover, .sub  .more button:hover {
+    text-shadow: 0 0 5px white;
+    color: #0056b3;
+}
+
+
+.call{
+    font-size: 1.5rem;
+}
+
+#portfolio .call {
+    font-size: 1.1rem;
+}
+
+.call button {
+    font-weight: 600;
+    border: none;
+    padding: 0.5rem;
+    line-height: 1;
+    text-align: center;
+    min-width: 65px !important;
+    color: #007bff;
+}
+
+.call button:focus, .call button:hover {
+    text-decoration: underline;
+    color: #0056b3;
+
+}
+
+.call button:focus {
+    outline: 0;
+}
+#portfolio a {
+    position: relative;
+}
+
+#portfolio [aria-label]::after {
+    content: attr(aria-label);
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 10%;
+    right: -16ch;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    white-space: wrap;
+    font-size: .85rem;
+    font-family: 
+        system-ui, -apple-system, BlinkMacSystemFont, 
+        'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 
+        'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #ffffffee !important;
+    box-shadow: #00000044 1px 1px 3px;
+    pointer-events: none;
+    white-space: normal;
+    text-shadow: none;
+    text-align: left;
+    z-index: 1;
+}
+
+#portfolio [aria-label]::after {
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+#portfolio [aria-label]:hover::after {
+    opacity: 1;
+    color: #0056b3;
+}
+
+.tech {
+    display: block;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.tech ul {
+    display: inline;
+    padding: 0;
+}
+
+.tech ul > li {
+    display: inline;
+    line-height: 100% !important;
+}
+
+.tech ul > li > a {
+    white-space: nowrap;
+    color: rgb(0, 123, 255) !important;
+    cursor: default;
+}
+
+.tech ul > li:not(:last-child):after {
+    content: " | ";
+    color: #00000033;
+}
+
+.project-links {
+    margin: auto;
+    margin-top: 1rem;
+    border: 2px solid black;
+    background: hsl(34, 57%, 90%);
+    width: 14rem;
+    border-radius: 2px;
+}
+
+.project-links a {
+    color: #0056b3;
+}
+
+footer {
+    background-color: transparent;
+}
+
+.dots {
+    width: 33.3333%;
+    left: 16.667;
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 4ch;
+}
+
+.project {
+    position: relative;
+    display: block;
+    margin: auto;
+}
+
+.disappear {
+    display: none;
+}
+
+body:has(.modal-el) {
+    overflow: hidden;
+}
+
+.modal-el {
+    position: fixed;
+    display: flex;
+    z-index: 11;
+    isolation: isolate;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0008;
+    display: block !important;
+    font-size: 0.9em !important;
+}
+
+.modal-el.add {
+    animation: fade 1s ease 0s 1 normal forwards;
+}
+
+.modal-el.remove {
+    animation: fade 0.5s ease 0s 1 reverse forwards;
+}
+
+.modal-el .modal-contents > * {
+    margin-inline: 0.75rem;
+}
+
+.modal-el .modal-contents {
+    position: relative;
+    /* margin: 0 4em; */
+    /* width: calc(100% - 4em); */
+    /* padding-right: 4em; */
+}
+
+.modal-el .modal-box header {
+    z-index: 1;
+    position: sticky;
+    display: block;
+    content: '';
+    inset: 0;
+    width: 100%;
+    height: 5em;
+    padding-block: 2em 5em;
+    box-shadow: 0 0 50px #f1efe4;
+    background-image: linear-gradient(90deg, #fdfbf2, #f7f1e0 30%, #fdfbf2);
+    mask-image: 
+        linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%), linear-gradient(to bottom, black 65%, transparent);
+    mask-composite: intersect;
+}
+
+.modal-el .modal-box > header h3 {
+    margin-inline: 1em;
+    text-align: center;
+    line-height: 0.9;
+}
+
+.modal-el .modal-box {
+    background-color: transparent;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    margin: auto;
+    height: 70vh;
+    border-radius: 50px;
+    width: 70vw;
+    min-width: 20rem;
+    background-image: conic-gradient(at top left, #fff7, #fffd, #fff7), conic-gradient(at bottom right, #fff7, gold, #fffd);
+    border: goldenrod;
+}
+
+.night .modal-el .modal-box header {
+    background-image: linear-gradient(90deg, #305675, #264561 30%, #264561);
+}
+
+.night .modal-el .modal-box {
+    position: relative;
+    background-image: conic-gradient(at top left, #0005, #305978,#1c365e), conic-gradient(at bottom right, #fff5, #305978,#1c365e);
+    color: #eee;
+    border: 1px solid rgb(11, 22, 37);
+
+}
+
+.modal-el .modal-box footer {
+    display: block;
+    inset-inline: 0;
+    height: 2em;
+    background-image: linear-gradient(90deg, #fdfbf2, #f7f1e0 75%);
+    mask: linear-gradient(transparent, black 50%);
+    box-shadow: 0 0 50px #f1efe4;
+    bottom: 0;
+    width: 100%;
+    position: sticky;
+    text-align: center;
+    scroll-behavior: smooth !important;
+}
+
+
+.night .modal-el .modal-box footer {
+    inset-inline: 0;
+    background-image: linear-gradient(90deg, #305978,#344d72);
+    mask: linear-gradient(transparent, black 50%);
+    box-shadow: 0 0 50px #305978;
+}
+
+.modal-el .modal-box .exit {
+    display: block;
+    position: absolute;
+    right: 0.3em;
+    top: 0.1em;
+    font-size: 3em;
+    cursor: pointer;
+}
+
+.modal-el .modal-box .up i {
+    border-block: 1px solid black;
+    height: 0;
+    border-radius: 999px;
+}
+
+.night .modal-el .modal-box .up i {
+    border-block: 1px solid white;
+}
+
+/* added the below media queries so that the sun/moon image stops at the middle on smaller devices*/
+
+/* extra-small */
+@media (min-width: 0px) and (max-width: 575px) {
+
+    @keyframes rise-mobile {
+        from {top: calc(50vh - 50vw);}
+        to {top: 100vh;}
+    }
+
+    .sun_moon svg {
+        animation: rise-mobile 2s ease 0s 1 reverse forwards;
+        height: 200vh;
+    }
+
+    .sun_moon circle {
+        cy: 100vw;
+        r: 100vw;
+    }
+
+    #navbarNav > ul > li {
+        background: none;
+        box-shadow: none;
+    }
+
+}
+
+footer {
+    display: block !important;
+}
+
+#main_page .mobile > nav {
+    display: none;
+}
+
+/* small+ */
+@media only screen and (max-width: 576px) {
+    #main_page .mobile > nav  {
+        display: flex;
+    }
+    
+    
+    .nav-animation-appear {
+        animation: mobile-nav 0.25s linear 0s 1 reverse backwards;
+    }
+    
+    .nav-animation {
+        animation: mobile-nav 0.25s linear 0s 1 forwards;
+    }
+    
+    footer {
+        display: none  !important;
+    }
+}
+
+@media print {
+    a {
+        white-space: nowrap;
+        text-decoration: none !important;
+    }
+
+    a:not(a[href^="mailto:"])::after{
+        content: ": " attr(href);
+        color: #444;
+    }
+  }

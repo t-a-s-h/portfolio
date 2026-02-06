@@ -1,0 +1,18 @@
+body.night .text-dark :is(p,.more) {
+    color: #ddd !important;
+    text-shadow: 0 0 0.25rem black !important;
+}
+
+body.night .summary.text-dark .tech  {
+    color: #b8c5df;
+    text-shadow: 0 0 0.75rem rgba(0, 0, 0, 0.518) !important;
+}
+
+body.night .text-dark[class^='display'] {
+    color: #b0b5c9 !important;
+    /* text-shadow: 0 0 0.5rem #aad9ff62 !important; */
+}
+
+.text-dark {
+    color: #333 !important;
+}

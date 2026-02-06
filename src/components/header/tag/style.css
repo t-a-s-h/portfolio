@@ -1,0 +1,32 @@
+#tag a {
+    all: unset;
+    cursor: pointer;
+    min-width: 2.75em;
+}
+
+#tag a {
+    height: 1.5em;
+    font-weight: bold;
+    letter-spacing: 0.1ch;
+    text-transform: uppercase;
+    color: var(--text-color-accent);
+    background-color: var(--accent-color-muted);
+    padding: 0.25em 1em;
+    border-radius: 2px;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+#tag a::before {
+    content: 'Natasha \2022  Fray'; /*2022 = unicode for bullet*/
+    align-items: center;
+    color: inherit;
+}
+
+
+@media screen and (max-width: 812px) {
+    #tag a::before {
+        content: 'N \2022  F'; /* 2022 = unicode for bullet */
+    }
+}

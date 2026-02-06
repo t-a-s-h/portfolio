@@ -1,0 +1,66 @@
+#theme-picker {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+
+#theme-picker .theme.theme1 {
+    --bg: var(--theme1-fg);
+    --fg: var(--theme1-bg);
+}
+
+#theme-picker .theme.theme2 {
+    --bg: var(--theme2-fg);
+    --fg: var(--theme2-bg);
+}
+
+#theme-picker .theme.theme3 {
+    --bg: var(--theme3-fg);
+    --fg: var(--theme3-bg);
+}
+
+#theme-picker .theme {
+    position: relative;
+    margin-inline: 0.3333em;
+    border-radius: 50%;
+    border: 3px solid var(--text-color);
+    width: 2em;
+    height: 2em;
+    cursor: pointer;
+}
+
+#theme-picker .theme::before {
+    content: "";
+    position: absolute;
+    display: block;
+    inset: 5px;
+    bottom: auto;
+    background-color: var(--fg);
+    border-radius: 50%;
+    height: calc(100% - 10px);
+    width: calc(100% - 10px);
+
+
+}
+
+#theme-picker .theme::after {
+    content: "";
+    position: absolute;
+    display: block;
+    inset-inline: 15px;
+    inset-block: 5px;
+    background-color: var(--bg);
+    height: 0;
+    width: 0;
+    z-index: 1;
+    transition: all 0.25s;
+    box-sizing: border-box;
+}
+
+#theme-picker .theme:hover::after {
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    inset: 5px;
+    height: calc(50% - 5px);
+    width: calc(100% - 10px);
+}
+

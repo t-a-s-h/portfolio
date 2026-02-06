@@ -1,0 +1,12 @@
+#projects {
+    grid-area: elements;
+    row-gap: 5rem;
+}
+
+#projects .project:nth-child(even) {
+    grid-template-areas: "image info";
+}
+
+#projects .project:nth-child(even) .circle {
+    background-color: var(--accent-color) !important;
+}

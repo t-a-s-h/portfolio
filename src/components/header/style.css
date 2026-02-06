@@ -1,0 +1,10 @@
+#root > header {
+    grid-area: header;
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: start;
+    margin-top: 1em;
+    height: 3rem;
+}

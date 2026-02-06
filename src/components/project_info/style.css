@@ -1,0 +1,89 @@
+.info {
+    display: grid;
+    height: 100%;
+}
+
+.element.project_info {
+    display: grid;
+    height: 100%;
+}
+
+.element.project_info .blurb {
+    height: 100%;
+}
+
+.element.project_info header {
+    display: grid;
+    grid-template-areas: 
+        "title"
+        "tag" 
+        "links" 
+        "content";
+    align-items: end;
+}
+
+.element.project_info .blurb span.name {
+    color: var(--fg-color);
+}
+
+.element.project_info .links {
+    grid-area: links;
+    justify-content: start;
+    height: fit-content;
+}
+
+.element.project_info .intra_links {
+    margin-top: 2rem;
+}
+
+.element.project_info h2 {
+    color: var(--fg-color)
+}
+
+.element.project_info .tag {
+    color: var(--fg-color-muted)
+}
+
+.element.project_info .blurb .content {
+    grid-area: content;
+    justify-self: center;
+    max-width: 60ch;
+}
+
+.element.project_info .blurb nav ul {
+    display: flex;
+    min-width: 50%;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.element.project_info .blurb nav ul li div {
+    display: block;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    height: min-content;
+    text-align: center;
+}
+
+.element.project_info .blurb nav ul li {
+    position: relative;
+    margin: auto;
+    display: block;
+    border-radius: 50%;
+    border: 2px solid var(--bg-color-muted);
+    background-color: none;
+    height: 7em;
+    width: 7em;
+}
+
+.element.project_info .blurb nav li.selected::before {
+    background-color: var(--fg-color-muted);
+    border: none;
+}
+
+.element.project_info .link_section {
+    flex-direction: row;
+    justify-content: space-between;
+}

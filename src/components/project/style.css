@@ -1,0 +1,20 @@
+.element.project .tag {
+    font-weight: lighter;
+    color: var(--fg-color-muted);
+    margin-block: 0.5rem;;
+}
+
+.element.project h1 span.name {
+    color: var(--fg-color);
+}
+
+.element.project .links {
+    justify-content: start;
+}
+
+.element .link:not(:last-child)::after {
+    content: '\2022';
+    margin-inline: 0.5rem;
+    pointer-events: none !important;
+    color: var(--bg-color-muted);
+}

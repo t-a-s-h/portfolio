@@ -1,0 +1,68 @@
+.screen {
+    position: absolute;
+    width: 28em;
+    height: 16em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-51.5%, -68%);
+    background-color: var(--accent-color);
+}
+
+.element .intro_tag {
+    font-weight: bold;
+    color: var(--fg-color);
+    font-size: var(--step-5);
+    margin-block: 0.5rem;
+}
+
+.element .intro_tag span {
+    color: var(--accent-color);
+}
+
+.elements .circle {
+    background-color: var(--fg-color) !important;  
+}
+
+.element h4.sub {
+    color: var(--accent-color-muted);
+    font-weight: lighter;
+    margin-bottom: 0;
+}
+
+.element p {
+    line-height: 1.7;
+    margin-block: 1rem;
+}
+
+.element h4.sub {
+    color: var(--accent-color-muted);
+    font-weight: lighter;
+    margin-bottom: 0;
+} 
+
+.element section {
+    margin-block: 2rem 1rem;
+}
+
+.element .intra_links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hello {
+    position: absolute;
+    width: 60%;
+    color: var(--bg-color);
+    top: 50%;
+    left: 50%;
+    transform: translate(-51.5%, -68%);
+    stroke-width: 5px;
+}
+
+.hello path {
+    stroke-dasharray: 600% 600%;
+}
+
+.element.intro .link::after {
+    content: none !important;
+}
