@@ -114,7 +114,6 @@
 
 .element .links {
     display: flex;
-    /* justify-content: center; */
     align-items: end;
     min-height: 4rem;
 }
@@ -186,26 +185,28 @@
     display: inline-flex;
     text-align: center;
     width: 100%;
+    font-weight: bold
 }
 
 .element nav ul li {
     display: flex;
     position: relative;
-    margin: -1rem;
+    margin: 1.5rem;
     height: 3rem;
     width: 3rem;
-    padding: 4rem;
+    padding: 1.5rem;
     align-items: center;
     justify-content: center;
     color: var(--text-color-accent);
     cursor: pointer;
+    transition: all 1s;
 }
 
 .element nav ul li.selected::before  {
     background-color: var(--accent-color);
 }
 
-.element nav ul li:hover::before {
+.element nav ul li:hover:not(.selected)::before {
     border-color: var(--fg-color);
     background-color: var(--fg-color);
 }
@@ -215,6 +216,15 @@
     position: absolute;
     border-radius: 50%;
     background-color: var(--fg-color-muted);
+    height: 6rem;
+    width: 6rem;
+    z-index: -1;
+}
+
+.element nav ul li::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
     height: 6rem;
     width: 6rem;
     z-index: -1;

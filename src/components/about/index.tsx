@@ -1,69 +1,8 @@
-import { useEffect, useState } from "react"
 import { IntraLinks } from "../page/intra_links"
+import { SectionNav } from "../page/section_nav"
 import "./style.css"
 
-const heading_names = [ 
-    "about_h1",
-    "about_h2",
-    "about_h3"
-]
-
-type SNProps = { heading_names : string[] }
-
-function SectionNav({ heading_names } : SNProps ) {
-    return (
-        <nav className="navigation image">
-            <ul>
-            {
-                heading_names.map(heading => {
-                    let h = document.getElementById(heading)
-                    if (! h) return
-                    return (
-                        <li 
-                            className={`heading ${heading}`}
-                            key={heading}    
-                            onClick={()=>{
-                                h.scrollIntoView({behavior: "smooth"})
-                            }}
-                        >{h.innerHTML}
-                        </li>
-                    )
-                })
-            }
-            </ul>
-        </nav>
-    )
-}
-
-let loaded = false
-
-const headings : Record<number,string> = {}
-
 export function About() {
-
-    const [ resized, setResized ] = useState(false)
-    const [ heading, setHeading ] = useState<null | string>(null)
-
-    useEffect(()=> {        
-        document.querySelectorAll(".sub").forEach((sub,i) => {
-            const elSub = sub as HTMLElement
-            headings[(~~((elSub.offsetTop) / 100)) * 100] = `about_h${i + 1}`
-        })
-        setResized(false)
-        if (! resized &&  loaded) {
-            onscroll = () => {
-                let h = (headings[(~~((scrollY) / 100)) * 100])
-                setHeading(H=> (h && h !== H) ? h : H)
-                document.querySelectorAll(".heading").forEach(el=>el.classList.remove("selected"))
-                document.querySelector(`.${heading}`)?.classList.add("selected")
-
-            }
-        }
-        onresize = () =>{
-            setResized(true)
-        }
-        loaded = true
-    },[resized,heading])
 
     return (
         <div id="about" className="elements">
@@ -76,7 +15,7 @@ export function About() {
                         <IntraLinks type="about" project={null}/>
                     </div>
                 </header>
-                <SectionNav heading_names={heading_names}/>
+                <SectionNav el_name={"about"}/>
                 </div>
                 <div className="blurb">
                     <section>
@@ -107,7 +46,6 @@ export function About() {
                     <IntraLinks type="about" project={null}/>
                     </div>
                 </div>
-                {/* <div className="image"></div> */}
             </div>
         </div>
     )
