@@ -1,9 +1,9 @@
-import "./style.css"
+// import "./style.css"
 
-function SectionNav() {
-    return (
-        <nav className="navigation">
-            
-        </nav>
-    )
-}
+// function SectionNav() {
+//     return (
+//         <nav className="navigation">
+
+//         </nav>
+//     )
+// }
