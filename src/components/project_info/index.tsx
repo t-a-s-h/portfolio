@@ -1,4 +1,4 @@
-import { useEffect, useRef, type RefObject } from "react"
+import { useRef, type RefObject } from "react"
 import { project_info } from "../projects/pList"
 import { capitalize } from "../../utils/utils"
 import "./style.css"
