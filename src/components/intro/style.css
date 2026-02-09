@@ -8,6 +8,11 @@
     background-color: var(--accent-color);
 }
 
+.intro.element h1 span.name {
+    color: var(--fg-color-muted);
+    white-space: nowrap;
+}
+
 .element .intro_tag {
     font-weight: bold;
     color: var(--fg-color);
@@ -23,30 +28,22 @@
     background-color: var(--fg-color) !important;  
 }
 
-.element h4.sub {
-    color: var(--accent-color-muted);
-    font-weight: lighter;
-    margin-bottom: 0;
-}
-
 .element p {
     line-height: 1.7;
     margin-block: 1rem;
 }
 
-.element h4.sub {
-    color: var(--accent-color-muted);
-    font-weight: lighter;
-    margin-bottom: 0;
-} 
-
-.element section {
-    margin-block: 2rem 1rem;
+.element address {
+    margin-block: 1rem;
 }
 
 .element .intra_links {
     display: flex;
     justify-content: space-between;
+}
+
+.hello path.hide {
+    display: none;
 }
 
 .hello {
@@ -63,6 +60,10 @@
     stroke-dasharray: 600% 600%;
 }
 
-.element.intro .link::after {
+.element.intro .links {
+    justify-content: center;
+}
+
+.element.intro .links .link::after {
     content: none !important;
 }

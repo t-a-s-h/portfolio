@@ -10,7 +10,7 @@
 
 #navigation ul li {
     position: relative;
-    transition: background-color 0.5s;
+    cursor: pointer;
 }
 
 /* main nav item */
@@ -38,11 +38,10 @@
 
 #navigation ul li a {
 all: unset;
-    display: block;
-    position: relative;
-    padding: 1em 2em; /* adjusted for negative margin */
-    cursor: pointer;
-    margin: -0.75em -1em; /* avoid glitches */
+display: block;
+position: relative;
+padding: 1em 2em; /* adjusted for negative margin */
+margin: -0.75em -1em; /* avoid glitches */
 }
 
 #navigation .icon {

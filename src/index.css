@@ -25,18 +25,27 @@
   --accent-color-muted: #b1effe;
   --text-color: #ddddee;
   --text-color-accent: #00001a;
-  --bg-color-faded : #0a0a29;
+  --bg-color-faded : #0c0c31;
   font-family: Arial, Helvetica, sans-serif;
   color-scheme: dark;
 }
 
-.transition.in {
+.transition.in, .transition.in {
   opacity: 1 !important;
-  transition: all 1s !important; 
+  scale: 1;
+  transition: all 0.7s !important; 
+  transform: scale(100%) !important;
 }
 
-.transition {
+.transition, .transition {
+  transform: scale(99%) !important;
+  transform-origin: 50% 50vh;
   opacity: 0 !important;
+}
+
+#root {
+    position: relative;
+    min-height: 100%;
 }
 
 
@@ -80,6 +89,7 @@ body, :root {
     align-content: start;
     max-width: 1280px;
     min-height: 100%;
+    position: relative;
 }
 
 :root[data-theme="theme2"] {

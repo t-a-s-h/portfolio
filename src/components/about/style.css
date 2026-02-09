@@ -1,3 +1,33 @@
+.bio.element {
+    grid-template-areas:
+        "header ."
+        "nav info";
+}
+
 .bio.element h1 span.name {
     color: var(--fg-color);
+}
+
+.bio.element section {
+    grid-area: content;
+}
+
+.bio.element .link_section.a {
+    grid-area: links1;
+}
+
+.bio.element .link_section.b {
+    grid-area: links2;
+}
+
+.bio.element .blurb {
+    display: grid;
+    grid-template-areas: "header" "links1" "content" "links2";
+}
+
+.bio.element .first {
+    position: sticky;
+    top: 0;
+    grid-area: nav;
+    width: 100%;
 }

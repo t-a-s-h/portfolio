@@ -8,11 +8,11 @@ Take a look around.`,
     links: [
         {
             target: "github",
-            url: "#"
+            url: "https://github.com/t-a-s-h"
         },
         {
             target: "linkedin",
-            url: "#"
+            url: "https://www.linkedin.com/in/natasha-fray/"
         },
         {
             target: "email",

@@ -1,13 +1,15 @@
 import { type Item } from "../../utils/types"
+import { replaceSpaces } from "../../utils/utils"
 import { Blurb } from "../page/blurb"
 import { Laptop } from "../page/laptop"
+import "./style.css"
 
-type projectProps = { project : Item }
+export type ProjectProps = { project : Item }
 
-export function Project( { project } : projectProps) {
+export function Project( { project } : ProjectProps) {
 
     return (
-        <article id={`${project.title}`} className="element project">
+        <article id={`${replaceSpaces(project.title)}`} className="element project">
             <Blurb element={ project } type={"project"}/>
             <div className="image">
                 <div className="circle"></div>

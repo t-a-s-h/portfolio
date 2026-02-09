@@ -1,5 +1,5 @@
 .page_footer {
-    top: 100%;
+    top: calc(100% + 12em);
     display: block;
     position: absolute;
     inset-inline: 25%;

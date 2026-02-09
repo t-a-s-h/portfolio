@@ -11,11 +11,11 @@ YouTube video Hangman is a Weird Game.`,
         links : [
             {
                 target : "GitHub",
-                url : "#",
+                url : "https://github.com/t-a-s-h/hangman",
             },
             {
                 target : "Demo",
-                url : "#",
+                url : "https://hangman-vert.vercel.app/",
             },
         ]
     },
@@ -27,11 +27,11 @@ YouTube video Hangman is a Weird Game.`,
         links : [
             {
                 target : "GitHub",
-                url : "#",
+                url : "https://github.com/t-a-s-h/connect-4_ts",
             },
                         {
                 target : "Demo",
-                url : "#",
+                url : "https://t-a-s-h.github.io/connect-4_ts/",
             },
         ]
     }

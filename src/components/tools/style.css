@@ -31,7 +31,7 @@
 .carousel li {
     display: inline-block;
     width: 8ch;
-    min-width: 8%;
+    min-width: 10%;
     margin-inline: 1rem;
     text-align: center;
     color: var(--bg-color-muted);

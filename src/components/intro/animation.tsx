@@ -13,8 +13,16 @@ export function Animation() {
     let drawn = 0
     
     useEffect(()=> {
+        const delay = 5;
+        helloPath.current?.classList.add("hide")
+        console.log(helloPath)
+        let elapsed = 0
         let interval = setInterval(() => {
-            requestAnimationFrame(()=>animate(helloPath.current,drawn += 5))
+            if (++elapsed < delay) return
+            else {
+                helloPath.current?.classList.remove("hide")
+                requestAnimationFrame(()=>animate(helloPath.current,drawn += 5))
+            }
             if (drawn >= 600) clearInterval(interval)
         },30)
     },[])

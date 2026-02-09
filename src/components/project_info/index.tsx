@@ -1,4 +1,4 @@
-import { useRef, type RefObject } from "react"
+import { useEffect, useRef, type RefObject } from "react"
 import { project_info } from "../projects/pList"
 import { capitalize } from "../../utils/utils"
 import "./style.css"
@@ -6,7 +6,7 @@ import type { Item } from "../../utils/types"
 import { Links } from "../page/links"
 import { IntraLinks } from "../page/intra_links"
 
-type InfoProps = { project : Item }
+export type InfoProps = { project : Item }
 
 export function Info( { project } : InfoProps ) {
 
@@ -30,8 +30,8 @@ export function Info( { project } : InfoProps ) {
                             text,
                         } = s
                         return (
-                            <div key={`section_${i}`}>
-                                <h4 className="sub">{capitalize(heading_text)}</h4>
+                            <div key={`section_${i + 1}`}>
+                                <h4 className="sub" id={`${project.title}_h${i + 1}`}>{capitalize(heading_text)}</h4>
                                 <p>{text}</p>
                             </div>
                         )

@@ -5,29 +5,38 @@ import { Intro } from './components/intro';
 import { Projects } from './components/projects';
 import { Tools } from './components/tools';
 import { About } from './components/about';
-import { Info } from './components/project_info';
-import { pageList, replaceSpaces } from './utils/utils';
-import { type Dispatch, useEffect, useLayoutEffect, useState, type RefObject } from 'react';
+import { pageList } from './utils/pages';
+import { type Dispatch, useEffect, useLayoutEffect, useState, type ComponentType } from 'react';
+import { Info, type InfoProps } from './components/project_info';
 import { project_list } from './components/projects/pList';
-const componentList : Record<string, React.ComponentType<ComponentProps>> = {
+
+const ProjectList : Record<string,ComponentType<any>> = 
+  {...project_list.reduce((acc,project)=> {
+    const Component : ComponentType<InfoProps> = Info
+    return {...acc, [project.title] : Component }
+  },{})}
+
+const componentRecord : Record<string,ComponentType<any>> = {
   "intro"   : Intro,
   "projects": Projects,
   "tools"   : Tools,
   "about"   : About,
+  ...ProjectList
 }
 
 export function useChangeDisplay(changers: any[], display : Element | null) {
   useEffect(()=>{
     if (! display) return
-      display.classList.add("transition")
-      display.classList.remove("in")
-      setTimeout(()=>display.classList.add("transition","in"), 50)
+    display.classList.add("transition")
+    display.classList.remove("in")
+    setTimeout(()=>display.classList.add("transition","in"), 50)
+
+    // remove classes so they do not interfere with other transitions
+    setTimeout(()=>display.classList.remove("transition","in"), 500)
     },changers)
 }
 
-
 export type PageProps = { setTheme: Dispatch<string> }
-export type ComponentProps = { variant? : string, ref? : RefObject<Element | null> }
 
 function App() {
 
@@ -49,38 +58,41 @@ function App() {
   return (
       <Routes>
         {
-
-          pageList.map(({route, name}) => {
-            const Component = componentList[name]
+          pageList.map(({route, name, project_number}) => {
+            const Component = componentRecord[name]
             const Page = function({ setTheme } : PageProps) {
             const root = document.getElementById("root")
-
             useChangeDisplay([],root)
+
+            // because otherwise browser router will try to scroll to the same height
+            // also scrolls to correct hash
+            useEffect(()=> {
+                let location = window.location.href
+                let re = new RegExp("(?<=#)\\w*$")
+                let result = re.exec(location)?.[0] as string
+                let top = document.getElementById(result) || document.documentElement
+                const { offsetLeft : x, offsetTop : y } = top
+                scrollTo(x,y)
+            },[])
+            // ****************
+
               return (
+                project_number ? (
+                <>
+                <Header page={"projects"} setTheme={setTheme}/>
+                <Component project={project_list[project_number - 1]} variant={name}/>
+                <Footer/>
+                </>) : (
                 <>
                 <Header page={name} setTheme={setTheme}/>
                 <Component variant={name}/>
                 <Footer/>
-                </>
+                </>)
               )
             }
             return <Route path={route} element={<Page key={name} setTheme={setTheme}/>}/>
         })
       }
-      {project_list.map(project => {
-
-          let title = replaceSpaces(project.title)
-
-          return (
-              <Route path={`projects/${title}`} element={
-                <>
-                <Header page={"projects"} setTheme={setTheme}/>
-                <Info key={title} project={project}/>
-                <Footer/>
-                </>
-              }/>
-          )
-      })}
     </Routes>
   )
 }
