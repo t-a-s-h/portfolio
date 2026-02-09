@@ -216,8 +216,8 @@
     position: absolute;
     border-radius: 50%;
     background-color: var(--fg-color-muted);
-    height: 6rem;
-    width: 6rem;
+    height: 6.5rem;
+    width: 6.5rem;
     z-index: -1;
 }
 
@@ -225,7 +225,7 @@
     content: "";
     position: absolute;
     border-radius: 50%;
-    height: 6rem;
-    width: 6rem;
+    height: 6.5rem;
+    width: 6.5rem;
     z-index: -1;
 }

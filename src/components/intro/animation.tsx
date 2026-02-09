@@ -1,8 +1,8 @@
 import { useEffect, useRef, type RefObject } from "react"
 
-const animate = (path : SVGPathElement | null, drawn : number = 0) => {
-    if (! path || drawn >= 600) return
-    path.style.strokeDasharray = `${drawn}% 600%`
+const animate = (path : SVGPathElement | null, drawn : number = 0, len : number = 600) => {
+    if (! path || drawn >= len) return
+    path.style.strokeDasharray = `${drawn}% ${len}%`
 }
   
 
@@ -15,7 +15,6 @@ export function Animation() {
     useEffect(()=> {
         const delay = 5;
         helloPath.current?.classList.add("hide")
-        console.log(helloPath)
         let elapsed = 0
         let interval = setInterval(() => {
             if (++elapsed < delay) return

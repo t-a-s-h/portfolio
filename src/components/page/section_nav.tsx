@@ -18,6 +18,7 @@ export function SectionNav({ el_name } : SNProps) {
                 const elSub = sub as HTMLElement
                 headings.push({height: (~~((elSub.offsetTop))), name: `${el_name}_h${i + 1}`})
             })
+            loaded = true
         }
         setResized(false)
         if (! resized &&  loaded) {
@@ -34,7 +35,6 @@ export function SectionNav({ el_name } : SNProps) {
         onresize = () =>{
             setResized(true)
         }
-        loaded = true
         setHeadings(Object.values(headings))
     },[resized,heading])
 
