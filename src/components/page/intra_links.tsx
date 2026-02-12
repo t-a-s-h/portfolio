@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { capitalize, replaceSpaces } from "../../utils/utils"
+import { capitalize, replaceBadChars } from "../../utils/utils"
 
 type ILProps = { type: string, project : string | null }
 
@@ -8,7 +8,7 @@ export function IntraLinks( { type, project } : ILProps) {
     let backwards = null
     let forwards = null
 
-    if (project) project = replaceSpaces(project)
+    if (project) project = replaceBadChars(project)
 
     switch(type) {
         case "intro" : {

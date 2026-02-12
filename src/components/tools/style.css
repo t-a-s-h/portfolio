@@ -1,13 +1,25 @@
 #tools {
     grid-area: elements;
-    display: grid;
     grid-template-areas: "tool" "carousel";
+    justify-items: start;
+}
+
+.scroll_list {
+    display: flex;
+    overflow-x: hidden;
+    width: max-content;
 }
 
 .carousel span.arrow {
     margin-inline: 2rem;
     font-size: var(--step-5);
+    color: var(--bg-color-muted);
     cursor: grab;
+    user-select: none;
+}
+
+.carousel span.arrow:hover {
+    color: var(--text-color)
 }
 
 .carousel ul {
@@ -26,17 +38,27 @@
     width: 100%;
     align-self: end;
     align-items: center;
+    justify-self: center;
 }
 
 .carousel li {
     display: inline-block;
     width: 8ch;
-    min-width: 10%;
+    min-width: 10ch;
     margin-inline: 1rem;
     text-align: center;
     color: var(--bg-color-muted);
+    scroll-margin-inline: 8ch;
+    cursor: pointer;
 }
 
-.carousel li:hover {
+.carousel li:hover,
+.carousel li.selected {
     color: var(--text-color);
+}
+
+.tool_list {
+    grid-area: tool;
+    width: 100%;
+    overflow: hidden;
 }

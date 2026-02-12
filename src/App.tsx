@@ -9,6 +9,7 @@ import { pageList } from './utils/pages';
 import { type Dispatch, useEffect, useLayoutEffect, useState, type ComponentType } from 'react';
 import { Info, type InfoProps } from './components/project_info';
 import { project_list } from './components/projects/pList';
+import { useChangeDisplay } from './utils/hooks';
 
 const ProjectList : Record<string,ComponentType<any>> = 
   {...project_list.reduce((acc,project)=> {
@@ -22,18 +23,6 @@ const componentRecord : Record<string,ComponentType<any>> = {
   "tools"   : Tools,
   "about"   : About,
   ...ProjectList
-}
-
-export function useChangeDisplay(changers: any[], display : Element | null) {
-  useEffect(()=>{
-    if (! display) return
-    display.classList.add("transition")
-    display.classList.remove("in")
-    setTimeout(()=>display.classList.add("transition","in"), 50)
-
-    // remove classes so they do not interfere with other transitions
-    setTimeout(()=>display.classList.remove("transition","in"), 500)
-    },changers)
 }
 
 export type PageProps = { setTheme: Dispatch<string> }

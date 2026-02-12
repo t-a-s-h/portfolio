@@ -1,5 +1,5 @@
 import { project_list } from "../components/projects/pList"
-import { replaceSpaces } from "./utils"
+import { replaceBadChars } from "./utils"
 
 export const pageList : { route: string, name : string, project_number? : number }[] = [
   {route : "/", name : "intro"},
@@ -9,7 +9,7 @@ export const pageList : { route: string, name : string, project_number? : number
   ...project_list.map(({title},i) => {
     return {
         project_number: i + 1,
-        route : `projects/${replaceSpaces(title)}`,
+        route : `projects/${replaceBadChars(title)}`,
         name : title
     }
   })

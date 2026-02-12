@@ -1,10 +1,11 @@
 #tools .tool.element {
     display: grid;
-    grid-area: tool;
+    width: 100vw;
 }
 
 #tools .blurb {
     grid-area: info;
+    width: 40rem;
 }
 
 #tools .image {

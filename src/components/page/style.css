@@ -49,17 +49,27 @@
     z-index: -1;
 }
 
-.element .image .laptop {
+.element .image .laptop, .element .image .drink {
     position: absolute;
     display: block;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: var(--bg-color);
-    width: 37em;
     height: auto;
     filter: drop-shadow(0 0 0 var(--bg-color));
 }
+
+.element .image .laptop {
+    width: 37em;
+}
+
+ .element .image .drink {
+    width: 35em;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ }
 
 .element .image img {
     position: absolute;

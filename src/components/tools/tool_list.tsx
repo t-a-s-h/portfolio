@@ -38,7 +38,7 @@ export const tool_list : ToolList = [
         tag: "Creates structure for web documents.",
         color: "color1",
         image: <svg className="html" viewBox="0 0 578 512"> <use href={`${tools}#html`}/></svg>,
-        blurb: <>I learned HTML by inspecting and experimenting with website code very early on. The semantics of HTML5 can help make source code more readable</>
+        blurb: <>I learned HTML by inspecting and experimenting with website code very early on. The semantics of HTML5 can help make source code more readable.</>
     },
     {
         name: "CSS",
@@ -52,7 +52,7 @@ export const tool_list : ToolList = [
         tag: "Executes code outside a web browser using JavaScript.",
         color: "color3",
         image: <svg className="node" viewBox="-30 0 512 512"> <use href={`${tools}#node`}/></svg>,
-        blurb: <>Blah node.</>
+        blurb: <>Node is great because it lets you write server code in JavaScript. I have used Node to make my own servers.</>
     },
     {
         name: "Git",
@@ -80,6 +80,6 @@ export const tool_list : ToolList = [
         tag: "Programming language often used in mathematics.",
         color: "color1",
         image: <svg className="python" viewBox="-30 0 512 512"> <use href={`${tools}#python`}/></svg>,
-        blurb: <>Blah python.</>
+        blurb: <>Python is good for writing clean and intuitive human readable code. I learned Python in university and appreciate its simplicity.</>
     }
 ]

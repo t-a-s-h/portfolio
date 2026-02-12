@@ -2,7 +2,7 @@ import { IntraLinks } from "../../page/intra_links";
 import { type ToolType } from "../tool_list"
 import { useRef } from "react";
 import "./style.css"
-import { useChangeDisplay } from "../../../App";
+import { useChangeDisplay } from "../../../utils/hooks";
 
 type ToolProps = { tool : ToolType }
 
@@ -15,7 +15,7 @@ export function Tool( { tool } : ToolProps) {
     useChangeDisplay([tool.name],t.current)
 
     return (
-            <div ref={t} id="tool" className={`tool element ${color}`}>
+            <div ref={t} id={`${tool.name}`} className={`tool element ${color}`}>
                 <div className="blurb">
                     <header>
                         <h1>Tools ● <br/><span className="name">{name}</span></h1>

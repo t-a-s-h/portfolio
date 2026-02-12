@@ -1,7 +1,7 @@
 .bio.element {
     grid-template-areas:
         "header ."
-        "nav info";
+        "image info";
 }
 
 .bio.element h1 span.name {
@@ -30,4 +30,20 @@
     top: 0;
     grid-area: nav;
     width: 100%;
+}
+
+.bio.element image {
+    --background-color: red;
+    --background-color-faded: darkRed;
+    --background-color-muted: pink;
+    --accent-color: blue;
+    --accent-color-faded: darkBlue;
+}
+
+.bio.element .circle {
+    background-color: var(--accent-color) !important;
+    width: 35em;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
