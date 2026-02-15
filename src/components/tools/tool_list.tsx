@@ -2,6 +2,7 @@ import tools from "../../assets/tools.svg"
 import type { ReactElement } from "react"
 
 export type ToolType = {
+    index: number,
     name: string,
     tag: string,
     color: "color1" | "color2" | "color3",
@@ -13,6 +14,7 @@ type ToolList = ToolType[]
 
 export const tool_list : ToolList = [
     {
+        index: 0,
         name: "React",
         tag: "Front-end JavaScript library.",
         color: "color1",
@@ -20,6 +22,7 @@ export const tool_list : ToolList = [
         blurb: <>I enjoy using React to maintain structure and manage state with its syntax for creating intuitive and reusable components.</>
     },
     {
+        index: 1,
         name: "TypeScript",
         tag: "Adds static typing with optional type annotations to JavaScript",
         color: "color2",
@@ -27,6 +30,7 @@ export const tool_list : ToolList = [
         blurb: <>I built my first TypeScript project last year and plan to keep using it for the structure it gives to my code.</>
     },
     {
+        index: 2,
         name: "JavaScript",
         color: "color3",
         tag: "Lightweight just-in-time compiled programming language with first-class functions.",
@@ -34,6 +38,7 @@ export const tool_list : ToolList = [
         blurb: <>I started delving into JavaScript at the beginning of the pandemic. Since then I've used it in many projects and like that it easily adds interactivity.</>
     },
     {
+        index: 3,
         name: "HTML",
         tag: "Creates structure for web documents.",
         color: "color1",
@@ -41,6 +46,7 @@ export const tool_list : ToolList = [
         blurb: <>I learned HTML by inspecting and experimenting with website code very early on. The semantics of HTML5 can help make source code more readable.</>
     },
     {
+        index: 4,
         name: "CSS",
         tag: "Used to describe the presentation of a document.",
         color: "color2",
@@ -48,6 +54,7 @@ export const tool_list : ToolList = [
         blurb: <>I learned CSS around the time I learned HTML by playing around with source code. I always go to CSS first for design.</>
     },
     {
+        index: 5,
         name: "Node",
         tag: "Executes code outside a web browser using JavaScript.",
         color: "color3",
@@ -55,6 +62,7 @@ export const tool_list : ToolList = [
         blurb: <>Node is great because it lets you write server code in JavaScript. I have used Node to make my own servers.</>
     },
     {
+        index: 6,
         name: "Git",
         tag: "Version control system.",
         color: "color1",
@@ -62,6 +70,7 @@ export const tool_list : ToolList = [
         blurb: <>I have used git to review and post pull requests and for just keeping track of several different versions of a project.</>
     },
     {
+        index: 7,
         name: "C++",
         tag: "Programming language often used for or high-efficiency code and its object-oriented features.",
         color: "color2",
@@ -69,6 +78,7 @@ export const tool_list : ToolList = [
         blurb: <>I learned C++ during university. I appreciate its strong typing and memory management. Writing in C++ helped me appreciate the importance of writing structured code.</>
     },
     {
+        index: 8,
         name: "C",
         tag: "Procedural programming language often used for high-efficiency code.",
         color: "color3",
@@ -76,6 +86,7 @@ export const tool_list : ToolList = [
         blurb: <>I learned C in university. I am fond of its low level features especially when dealing with strings.</>
     },
     {
+        index: 9,
         name: "Python",
         tag: "Programming language often used in mathematics.",
         color: "color1",

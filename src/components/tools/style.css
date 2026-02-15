@@ -23,12 +23,13 @@
 }
 
 .carousel ul {
+    position: relative;
     display: flex;
     flex-wrap: nowrap;
-    overflow: hidden;
     margin: 0;
     padding: 0;
     border-radius: 1rem;
+    transform: translate(-33.33%);
 }
 
 .carousel {
@@ -39,6 +40,7 @@
     align-self: end;
     align-items: center;
     justify-self: center;
+    position: relative;
 }
 
 .carousel li {
@@ -48,13 +50,14 @@
     margin-inline: 1rem;
     text-align: center;
     color: var(--bg-color-muted);
-    scroll-margin-inline: 8ch;
     cursor: pointer;
 }
 
 .carousel li:hover,
 .carousel li.selected {
     color: var(--text-color);
+    backface-visibility: hidden !important;
+    will-change: transform !important;
 }
 
 .tool_list {
