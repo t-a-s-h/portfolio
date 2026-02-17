@@ -32,18 +32,29 @@
     width: 100%;
 }
 
-.bio.element image {
-    --background-color: red;
-    --background-color-faded: darkRed;
-    --background-color-muted: pink;
-    --accent-color: blue;
-    --accent-color-faded: darkBlue;
+.bio.element .image {
+    position: relative;
 }
 
 .bio.element .circle {
     background-color: var(--accent-color) !important;
-    width: 35em;
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 10em;
+    transform: translateX(-50%);
 }
+
+ .bio.element .image .drink {
+    position: absolute;
+    width: 27em;
+    top: 20em;
+    left: 50%;
+    transform: translateX(-50%);
+ }
+
+  .bio.element .image #steam {
+    position: absolute;
+    top: 3em;
+    width: 40em;
+    fill: var(--bg-color-muted);
+    left: 50%;
+    transform: translateX(-50%);
+  }

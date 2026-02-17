@@ -5,6 +5,7 @@ import "./style.css"
 import type { Item } from "../../utils/types"
 import { Links } from "../page/links"
 import { IntraLinks } from "../page/intra_links"
+import { Laptop } from "../page/laptop"
 
 export type InfoProps = { project : Item }
 
@@ -42,7 +43,21 @@ export function Info( { project } : InfoProps ) {
                 <Links type="project" links={project.links}/>
                 </div>
                 </div>
-                <div className="image"></div>
+                <div className="image A">
+                    <div className="circle"></div>
+                    <Laptop/>
+                    <img src={`../${project.image}`} alt="" />
+                </div>
+                <div className="image B">
+                    <div className="circle"></div>
+                    <Laptop/>
+                    <img src={`../${project.image}`} alt="" />
+                </div>
+                <div className="image C">
+                    <div className="circle"></div>
+                    <Laptop/>
+                    <img src={`../${project.image}`} alt="" />
+                </div>
             </div>
         </div>
     )

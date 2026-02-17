@@ -64,13 +64,6 @@
     width: 37em;
 }
 
- .element .image .drink {
-    width: 35em;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -50%);
- }
-
 .element .image img {
     position: absolute;
     width: 28em;

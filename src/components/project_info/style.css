@@ -88,3 +88,32 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+.element.project_info .image > * {
+    font-size: 0.4em;
+}
+
+.element.project_info .image.A {
+    top: 0%;
+}
+
+
+.element.project_info .image.B {
+    top: 25%;
+}
+
+.element.project_info .image.C {
+    top: 50%;
+}
+
+.element.project_info .image.A .circle {
+    background-color: var(--bg-color-muted) !important;
+}
+
+.element.project_info .image.B .circle {
+    background-color: var(--fg-color-muted) !important;
+}
+
+.element.project_info .image.C .circle {
+    background-color: var(--accent-color) !important;
+}

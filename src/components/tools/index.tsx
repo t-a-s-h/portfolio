@@ -8,17 +8,26 @@ let tt : number = 0 // needs to be outside so it can remain constant b/t renders
 
 export function Tools() {
 
+    const debounceTime = 300
+
+    const switchTime = 50
+
+    const lastClickInterval = useRef<NodeJS.Timeout >(undefined)
+
+    const lastClick = useRef(0)
+
     const carousel = useRef<HTMLUListElement | null>(null);
 
     const [ toolIndex, setToolIndex ] = useState<number>(tt);
 
     const [ tool, setTool ] = useState<ToolType>(tool_list[toolIndex])
 
-    const [ direction, setDirection ] = useState<number>(0)
+    const [ dx, setDx ] = useState<number>(0)
 
     const [ carousel_index, setCarouselIndex ] = useState<number>(toolIndex + tlen); 
 
-    const carouselList = [ ...tool_list, ...tool_list, ...tool_list ]
+    const carouselList = 
+    [ ...tool_list, ...tool_list, ...tool_list, ...tool_list ] // repeated 4x for smoothness
 
     function modIndex(index : number, length : number) : number {
         return (length + index) % length
@@ -26,7 +35,7 @@ export function Tools() {
 
     function endTransition() {
         if (! carousel.current) return
-        if (carousel_index < tlen || carousel_index > tlen * 2) {
+        if (carousel_index < tlen || carousel_index >= tlen * 2) {
             setCarouselIndex(toolIndex + tlen)
         }
         tt = toolIndex
@@ -42,13 +51,17 @@ export function Tools() {
     }
 
     useEffect(()=> {
-        if (direction === 0) {
+        if (dx === 0) {
             endTransition()
         }
-        else {
-            transition(direction)
+        else if (Date.now() - lastClick.current < debounceTime) {
+            return
         }
-    },[direction])
+        else {
+            transition(dx)
+            lastClick.current = Date.now()
+        }
+    },[dx])
     
     return (
         <div id="tools" className="elements">
@@ -60,18 +73,22 @@ export function Tools() {
         <div className="carousel">
         <span 
             className="left arrow"
-            onClick={()=>{
-                setDirection(d=>d - 1)
+            onMouseDown={()=>{
+                lastClickInterval.current = setInterval(()=>setDx(d=>d - 1),switchTime)
+            }}
+            onMouseUp={()=> {
+                setDx(0)
+                clearInterval(lastClickInterval.current)
             }}
         >‹</span>
         <div className="scroll_list">
         <ul ref={carousel}
             style={{
-                transition: (direction === 0) ? "none" : "transform 0.2s ease",
+                transition: (dx === 0) ? "none" : "transform 0.2s ease",
                 transform: `translate(-${(((carousel_index) / carouselList.length)) * 100}%)`
             }}
             onTransitionEnd={()=>{
-                setDirection(0)
+                setDx(0)
             }}
         >
             {carouselList.map((t,i) =>{
@@ -80,7 +97,7 @@ export function Tools() {
                     key={i}
                     className={`${t.index === tool.index ? "selected" : ""}`}
                     onClick = {()=> {
-                        setDirection(modIndex(t.index - toolIndex,tool_list.length))
+                        setDx(modIndex(t.index - toolIndex,tool_list.length))
                         setTool(tool_list[t.index])
                     }}
                 >{t.image}</li>
@@ -91,8 +108,12 @@ export function Tools() {
         </div>
         <span 
             className="right arrow"
-            onClick={()=>{
-                setDirection(d=> d + 1)
+            onMouseDown={()=>{
+                lastClickInterval.current = setInterval(()=>setDx(d=> d + 1),switchTime)
+            }}
+            onMouseUp={()=> {
+                setDx(0)
+                clearInterval(lastClickInterval.current)
             }}
         >›</span>
         </div>
