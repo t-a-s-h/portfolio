@@ -17,7 +17,7 @@ const AboutMe = () => {
                             <div className="col-lg-8 my-auto order-2 order-lg-1">
                                 <div className="call intro mx-auto text-dark text-left">
                                     <p>Hi, my name is Natasha.</p>
-                                    <p>I have several ideas for projects. Some of which I have completed &emdash; most of which are pending. I will add to this portfolio as the list of completed projects grows.</p>
+                                    <p>I have several ideas for projects. Some of which I have completed &mdash; most of which are pending. I will add to this site as the list of completed projects grows.</p>
                                     <div className="sb"></div>
                                 </div>
                             </div>

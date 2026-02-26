@@ -7,11 +7,9 @@ const replaceItems = projects.reduce((acc,curr,i) => {
     return acc
 },{})
 
-replaceItems['hangman is a weird game'] = <ALink key={`youtube link`} linkText={'hangman is a weird game'} url={'https://www.youtube.com/watch?v=le5uGqHKll8'}/>
-
-String.prototype.replaceJSX = function (find) {
+export default function replaceJSX (s) {
     const re = new RegExp(`#\\(([^()]+)\\)`,'g')
-    let newValue = this.valueOf().split(re)
+    let newValue = s.valueOf().split(re)
     return newValue.reduce((acc,fragment,i) => {
             if (i === 0) return [fragment]
             else return [...acc,replaceItems[fragment]?? fragment]

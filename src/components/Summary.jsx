@@ -8,7 +8,7 @@ const Summary = (props) => {
     return (
         <div key={props.title} className="summary col-md-6 call my-auto text-dark px-md-5 font-weight-normal p-md-2 p-0">
             <div className="sub" key={props.title + ' description'}>
-                <p>{props.summary.replaceJSX()}</p>
+                <p>{replaceJSX(props.summary)}</p>
                 <ShowMore index={props.index} curr_project={props.curr_project} showMore={props.showMore} setShowMore={props.setShowMore}/>
              </div>
             <Technologies

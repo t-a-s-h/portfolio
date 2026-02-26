@@ -14,7 +14,7 @@ const Project = (props) => {
                     <div className="col-md-6 img-fluid m-auto p-md-2 p-0">     
                         <div className="frame mx-auto">
                         <a target="_blank" rel="noreferrer" href={props.url}>
-                            <img className="img-thumbnail rounded-0 d-block text-dark w-25" src={process.env.PUBLIC_URL + props.image} alt={props.title}></img>
+                            <img className="img-thumbnail rounded-0 d-block text-dark w-25" src={props.image} alt={props.title}></img>
                         </a>
                         </div>
                         <div className="cover mx-auto"></div>

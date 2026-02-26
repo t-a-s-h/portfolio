@@ -1,4 +1,3 @@
-import replaceJSX from "./replaceWithComponent"
 // import React from
 import data from "./projectList.json"
 
