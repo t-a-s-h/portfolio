@@ -16,7 +16,7 @@ const Navbar = (props) => {
                     </li>
                         <div className="sub-nav">
                           <li className="nav-item">
-                          <a className="nav-link" href="#toc">Projects {/*<i className="fa fa-caret-down"></i>*/}</a>
+                          <a className="nav-link" href="#portfolio">Projects</a>
                             <ul className="nav navbar-nav sub-nav-content">
                                 {
                                 props.titles.map(title => (
