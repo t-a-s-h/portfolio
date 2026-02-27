@@ -314,6 +314,7 @@ section {
 
 #skills {
     min-height: 100vh;
+    cursor: default;
 }
 
 section > *, article > * {
@@ -321,8 +322,41 @@ section > *, article > * {
     z-index: 10;
 }
 
-#skills * {
+#skills .skills-list {
     position: relative;
+}
+
+#skills .skills-list h4 {
+    position: static;
+}
+
+#skills h4:hover::after {
+    opacity: 1;
+    color: #0056b3;
+}
+
+#skills h4::after {
+    position: absolute;
+    top: calc(100% + 3em);
+    left: 0;
+    width: 100%;
+    display: block;
+    text-wrap: wrap;
+    content: attr(aria-label);
+    opacity: 0;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    white-space: wrap;
+    font-size: 0.85em;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: #ffffffee !important;
+    box-shadow: #00000044 1px 1px 3px;
+    pointer-events: none;
+    white-space: normal;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+
 }
 
 #about_me {
@@ -753,7 +787,7 @@ p a:hover, .call a:hover, .sub  .more button:hover {
     position: relative;
 }
 
-#portfolio [aria-label]::after {
+/* #portfolio [aria-label]::after {
     content: attr(aria-label);
     opacity: 0;
     position: absolute;
@@ -772,17 +806,14 @@ p a:hover, .call a:hover, .sub  .more button:hover {
     text-shadow: none;
     text-align: left;
     z-index: 500;
-}
-
-#portfolio [aria-label]::after {
     opacity: 0;
     transition: all 0.5s ease-in-out;
-}
+} */
 
-#portfolio [aria-label]:hover::after {
+/* #portfolio [aria-label]:hover::after {
     opacity: 1;
     color: #0056b3;
-}
+} */
 
 .tech {
     display: block;

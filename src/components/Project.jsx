@@ -25,7 +25,6 @@ const Project = (props) => {
                         index={props.index}
                         description={props.description}
                         more={props.more}
-                        next_steps={props.next_steps}
                         show_more={props.show_more}
                         summary={props.summary}
                         link={props.link}

@@ -7,22 +7,16 @@
             "git": "https://github.com/t-a-s-h/tic-tac-toe",
             "summary": [
                 "This #(tic-tac-toe) game lets you play against the computer. It was my experimentation with the minimax algorithm.",
-                "The game was created as a means of experimentation with the minimax algorithm. I wanted to experiment with artificial intelligence and this was my introduction into that concept.",
-                "This game was created at the end of last year over the course of 2-3 weeks."
+                "The game was created as a means of experimentation with the minimax algorithm. I wanted to experiment with artificial intelligence and this was my introduction into that concept."
             ],
-            "next_steps" : "Next steps for this project include giving users more options on how to play by making a multiplayer option. This would also allow me to gain more experience working with websockets.",
             "more": {
                 "description": [
-                    "I developed an interactive #(tic-tac-toe) game that gives users the option to play against human or computer opponent. Through developing this game, I was able to explore the use of artificial intelligence in game development, specifically the minimax algorithm.",
-                    "This game, created at the end of last year over the course of 2-3 weeks, showcases my ability to combine the theory of advanced algorithms with something practical, like game development — all while recreating this classic game of #(tic-tac-toe) in the process."
+                    "I developed an interactive #(tic-tac-toe) game that gives users the option to play against human or computer opponent. Through developing this game, I was able to explore the use of artificial intelligence in game development, specifically the minimax algorithm."
                 ],
                 "achievements": {
-                    "minimax algorithm implementation": "Successfully implemented to minimax algorithm with some randomization to create a competitive, but non predictable opponent.",
+                    "minimax algorithm implementation": "Successfully implemented to minimax algorithm with some randomization to create a competitive, but somewhat unpredictable opponent.",
                     "responsive design": "This game utilizes a minimalistic design that ensures a seamless gaming experience on both desktop and mobile devices."
-                },
-                "next steps": [
-                    "To further enhance this project, I plan to introduce a multiplayer option. This would not only improve users' gameplay experience but would also allow me to broaden my skillset by delving into the use of websockets."
-                ]
+                }
             },
             "technologies": [
                 {
@@ -45,17 +39,15 @@
             "url": "https://replit.com/@t-a-s-h/dominoes",
             "git": "https://github.com/t-a-s-h/dominoes",
             "summary": ["A basic command line based game of #(dominoes) that I created in C++."],
-            "next_steps" : "Next steps for this project include giving users more options on how to play by making a multiplayer option. This would also allow me to gain more experience working with websockets.",
             "more": {
                 "description": [
                     "I developed an interactive command line version of the game of #(dominoes) using C++. This game was a means for me to explore object oriented programming (OOP) concepts and an introduction to coding a fully developed project in C++.", 
-                    "This game, completed on weekends and in my spare time over the course of about 2 months, displays my abilities in OOP."
+                    "This game, displays some of my abilities in OOP."
                 ],
                 "achievements": {
                     "object oriented programming (OOP)": "Successfully used C++ to implement a game using the computer science paradigm of object oriented programming.",
                     "clean code": "Through using GoogleTest, I was able create my code so that any updates to my project can be a seamless as possible."
-                },
-                "next steps": "To improve this project further, I plan to make a graphical user interface (GUI) using a GUI framework for C++. This would not only allow the game to reach more users, as not everyone is familiar with command line games, but will also give me a chance to explore a new side of C++."
+                }
             },
             "technologies": [
                 {
@@ -71,18 +63,14 @@
             "summary": [
                 "In this #(hangman) game, you can either guess a word or have the computer guess a word."
             ],
-            "next_steps" : "Next steps for this project include giving users more options on how to play by making a multiplayer option. This would also allow me to gain more experience working with websockets.",
             "more": {
                 "description": [
-                    "I developed a #(hangman) game using React. I was inspired to create this by the #(hangman is a weird game) Youtube video. I enjoyed creating this project in particular because it gave me a chance to utilize regular expressions which I think is a very powerful tool that can be used to create some truly elegant code.",
-                    "This game was originally completed in my spare time over about a month and a half. I have since edited it to use Reacts features better and removed API dependence for the retrieval of dictionary words."
+                    "I developed a #(hangman) game using React. I was inspired to create this by the #(hangman is a weird game) Youtube video. I enjoyed creating this project in particular because it gave me a chance to utilize regular expressions -- at the time I was really into RegEx and I still think it is useful tool that can be used to create some nice code."
                 ],
                 "achievements": {
-                    "JS framework (React)": "Successfully employed React  to create an engaging and user-friendly Hangman game.",
+                    "JS framework (React)": "Successfully employed React to create an engaging and user-friendly Hangman game.",
                     "regular expressions": "Implemented regular expressions to enhance user experience, creating the option for for users to interact with an \"intelligent\" computer. "
-                },
-
-                "next steps": "In the upcoming development phase, I plan to create more interactivity for the user by incorporating category selection into the \"guess a word\" user flow. Additionally, I aim to improve the GUI for a more polished user experience."
+                }
             },
             "technologies": [
                     {

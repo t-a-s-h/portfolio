@@ -25,7 +25,6 @@ const Projects = ({ projects, showMore, setShowMore, curr_project }) => {
                         more={project.more}
                         show_more={project.show_more}
                         summary={project.summary}
-                        next_steps={project.next_steps}
                         url={project.url}
                         git={project.git}  
                         technologies={project.technologies} 

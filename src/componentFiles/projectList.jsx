@@ -3,13 +3,12 @@ import data from "./projectList.json"
 
 class Project {
 
-  constructor(title, image, url,  git="#", summary="", technologies=[], more="", next_steps) {
+  constructor(title, image, url,  git="#", summary="", technologies=[], more="") {
     this.title = title
     this.image = image
     this.url = url
     this.git = git
     this.summary = more.description[0].substring(0,150)
-    this.next_steps = next_steps
     this.more = more
     this.technologies = technologies
   }
@@ -24,7 +23,6 @@ const projects = data.projects.map((project,i) => {
     project.summary,
     project.technologies,
     project.more,
-    project.next_steps
   ),index: i}
 })
 
